@@ -1,7 +1,7 @@
 package com.proyectoFinal.cuencaNan.model;
 
 public class Geometry {
-	
+
 	private Location location;
 
 	public Location getLocation() {
@@ -11,7 +11,5 @@ public class Geometry {
 	public void setLocation(Location location) {
 		this.location = location;
 	}
-	
-	
 
 }

@@ -3,17 +3,16 @@ package com.proyectoFinal.cuencaNan.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Response {
-	
-@JsonProperty("results")	
-private Result[] result;
 
-public Result[] getResult() {
-	return result;
-}
+	@JsonProperty("results")
+	private Result[] result;
 
-public void setResult(Result[] result) {
-	this.result = result;
-}
+	public Result[] getResult() {
+		return result;
+	}
 
+	public void setResult(Result[] result) {
+		this.result = result;
+	}
 
 }

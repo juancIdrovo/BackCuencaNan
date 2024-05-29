@@ -30,6 +30,7 @@ public class Geocoder {
 		.queryParam("address", address)
 		.build();
 		System.out.println(uri.toUriString());
+		System.out.println(uri.toUriString());
 		ResponseEntity<Response> response =  new RestTemplate().getForEntity(uri.toUriString(),Response.class);
 		return response.getBody();
 	}
