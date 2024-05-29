@@ -3,14 +3,18 @@ package com.proyectoFinal.cuencaNan.model.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.proyectoFinal.cuencaNan.model.dao.IForoUsuarioDao;
 import com.proyectoFinal.cuencaNan.model.entity.ForoUsuario;
 
+@Service 
 public class ForoUsuarioServiceImpl implements IForoUsuarioService{
 	
 	@Autowired
+	
+	
 	private IForoUsuarioDao foroUsuarioDao;
 
 	@Override

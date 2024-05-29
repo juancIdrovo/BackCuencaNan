@@ -8,7 +8,7 @@ public interface IAdministradorService {
 
 	public List<Administrador> findAll();
 
-	public Administrador save(Administrador administrador);
+	public Administrador save(Administrador id);
 
 	public Administrador findById(Long id);
 
