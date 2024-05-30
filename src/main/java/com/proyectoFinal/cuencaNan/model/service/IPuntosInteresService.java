@@ -12,5 +12,5 @@ public interface IPuntosInteresService {
 	
 	public PuntosInteres findById(Long id);
 	
-	public void delete(Long id);
+	public void delete (Long id);
 }
