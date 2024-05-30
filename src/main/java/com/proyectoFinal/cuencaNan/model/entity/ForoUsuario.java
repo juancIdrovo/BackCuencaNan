@@ -40,9 +40,6 @@ public class ForoUsuario implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-<<<<<<< Updated upstream
-	
-=======
->>>>>>> Stashed changes
+
 	
 }
