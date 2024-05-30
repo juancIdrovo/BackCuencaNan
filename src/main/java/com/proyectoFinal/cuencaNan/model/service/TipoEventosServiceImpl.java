@@ -3,10 +3,12 @@ package com.proyectoFinal.cuencaNan.model.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.proyectoFinal.cuencaNan.model.dao.ITipoEventosDao;
 import com.proyectoFinal.cuencaNan.model.entity.TiposEventos;
 
+@Service
 public class TipoEventosServiceImpl implements ITipoEventosService{
 
 	@Autowired
