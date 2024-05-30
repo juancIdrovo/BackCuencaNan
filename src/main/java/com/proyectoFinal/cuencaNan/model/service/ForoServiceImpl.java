@@ -3,11 +3,13 @@ package com.proyectoFinal.cuencaNan.model.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.proyectoFinal.cuencaNan.model.dao.IForoDao;
 import com.proyectoFinal.cuencaNan.model.entity.Foro;
 
+@Service
 public class ForoServiceImpl implements IForoService{
 
 	@Autowired
