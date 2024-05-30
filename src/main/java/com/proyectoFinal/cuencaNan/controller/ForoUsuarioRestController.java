@@ -26,26 +26,26 @@ public class ForoUsuarioRestController {
 	private IForoUsuarioService foroUsuarioservice;
 
 	// listar_todas_los_forosUsuarios
-	@GetMapping("/listar")
+	@GetMapping("/forousuarios")
 	public List<ForoUsuario> indext() {
 		return foroUsuarioservice.findAll();
 	}
 
 	// buscar_un foroUsuario_por_id
-	@GetMapping("/buscar/{id}")
+	@GetMapping("/forousuarios/{idForoUsuario}")
 	public ForoUsuario show(@PathVariable Long id) {
 		return foroUsuarioservice.findById(id);
 	}
 
 	// guardar_un_foroUsuario
-	@PostMapping("/guardar")
+	@PostMapping("/forousuarios")
 	@ResponseStatus(HttpStatus.CREATED)
 	public ForoUsuario create(@RequestBody ForoUsuario foroUsuario) {
 		return foroUsuarioservice.save(foroUsuario);
 	}
 
 	// editar_un_foroUsuario
-	@PutMapping("/editar/{id}")
+	@PutMapping("/forousuarios/{idForoUsuario}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public ForoUsuario update(@RequestBody ForoUsuario foroUsuario, @PathVariable Long id) {
 		ForoUsuario foroUsuarioActual = foroUsuarioservice.findById(id);
@@ -53,7 +53,7 @@ public class ForoUsuarioRestController {
 	}
 
 	// eliminar_un_foroUsuario
-	@DeleteMapping("/eliminar/{id}")
+	@DeleteMapping("/forousuarios/{idForoUsuario}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long id) {
 		foroUsuarioservice.delete(id);

@@ -26,26 +26,26 @@ public class AdministradorRestController {
 	private IAdministradorService administradorservice;
 
 	// listar_todas_los_administradores
-	@GetMapping("/listar")
+	@GetMapping("/administradores")
 	public List<Administrador> indext() {
 		return administradorservice.findAll();
 	}
 
 	// buscar_un administrador_por_id
-	@GetMapping("/buscar/{id}")
+	@GetMapping("/administradores/{idAdministrador}")
 	public Administrador show(@PathVariable Long id) {
 		return administradorservice.findById(id);
 	}
 
 	// guardar_un_administrador
-	@PostMapping("/guardar")
+	@PostMapping("/administradores")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Administrador create(@RequestBody Administrador administrador) {
 		return administradorservice.save(administrador);
 	}
 
 	// editar_un_administrador
-	@PutMapping("/editar/{id}")
+	@PutMapping("/administradores/{idAdministrador}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Administrador update(@RequestBody Administrador administrador, @PathVariable Long id) {
 		Administrador administradorActual = administradorservice.findById(id);
@@ -53,7 +53,7 @@ public class AdministradorRestController {
 	}
 
 	// eliminar_un_administrador
-	@DeleteMapping("/eliminar/{id}")
+	@DeleteMapping("/administradores/{idAdministrador}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long id) {
 		administradorservice.delete(id);

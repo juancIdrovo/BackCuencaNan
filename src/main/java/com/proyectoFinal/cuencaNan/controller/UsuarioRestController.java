@@ -26,26 +26,26 @@ public class UsuarioRestController {
 	private IUsuarioService usuarioservice;
 
 	// listar_todas_los_usuarios
-	@GetMapping("/listar")
+	@GetMapping("/usuarios")
 	public List<Usuario> indext() {
 		return usuarioservice.findAll();
 	}
 
 	// buscar_un usuario_por_id
-	@GetMapping("/buscar/{id}")
+	@GetMapping("/usuarios/{idUsuario}")
 	public Usuario show(@PathVariable Long id) {
 		return usuarioservice.findById(id);
 	}
 
 	// guardar_un_usuario
-	@PostMapping("/guardar")
+	@PostMapping("/usuarios")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Usuario create(@RequestBody Usuario usuario) {
 		return usuarioservice.save(usuario);
 	}
 
 	// editar_un_usuario
-	@PutMapping("/editar/{id}")
+	@PutMapping("/usuarios/{idUsuario}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Usuario update(@RequestBody Usuario usuario, @PathVariable Long id) {
 		Usuario usuarioActual = usuarioservice.findById(id);
@@ -54,7 +54,7 @@ public class UsuarioRestController {
 	}
 
 	// eliminar_un_usuario
-	@DeleteMapping("/eliminar/{id}")
+	@DeleteMapping("/usuarios/{idUsuario}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long id) {
 		usuarioservice.delete(id);
