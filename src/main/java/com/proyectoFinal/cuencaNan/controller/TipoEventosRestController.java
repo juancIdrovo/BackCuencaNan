@@ -26,26 +26,26 @@ public class TipoEventosRestController {
 	private ITipoEventosService tipoeventoService;
 	
 	// listar_todas_los_tiposEventos
-		@GetMapping("/listar")
+		@GetMapping("/tipo_eventos")
 		public List<TiposEventos> indext() {
 			return tipoeventoService.findAll();
 		}
 
 		// buscar_un tipoEvento_por_id
-		@GetMapping("/buscar/{id}")
+		@GetMapping("/tipo_eventos/{id_tipoEvento}")
 		public TiposEventos show(@PathVariable Long id) {
 			return tipoeventoService.findById(id);
 		}
 		
 		// guardar_un_tipoEvento
-		@PostMapping("/guardar")
+		@PostMapping("/tipo_eventos")
 		@ResponseStatus(HttpStatus.CREATED)
 		public TiposEventos create(@RequestBody TiposEventos tipoevento) {
 			return tipoeventoService.save(tipoevento);
 		}
 		
 		// editar_un_tipoEvento
-		@PutMapping("/editar/{id}")
+		@PutMapping("/tipo_eventos/{id_tipoEvento}")
 		@ResponseStatus(HttpStatus.CREATED)
 		public TiposEventos update(@RequestBody TiposEventos tipoevento, @PathVariable Long id) {
 			TiposEventos TipoEventoActual = tipoeventoService.findById(id);
@@ -53,7 +53,7 @@ public class TipoEventosRestController {
 		}
 
 		// eliminar_un_tipoEvento
-		@DeleteMapping("/eliminar/{id}")
+		@DeleteMapping("/tipo_eventos/{id_tipoEvento}")
 		@ResponseStatus(HttpStatus.NO_CONTENT)
 		public void delete(@PathVariable Long id) {
 			tipoeventoService.delete(id);
