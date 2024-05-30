@@ -14,7 +14,6 @@ public class ForoUsuarioServiceImpl implements IForoUsuarioService{
 	
 	@Autowired
 	
-	
 	private IForoUsuarioDao foroUsuarioDao;
 
 	@Override

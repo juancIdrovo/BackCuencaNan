@@ -17,11 +17,29 @@ public class ForoUsuario implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idForoUsuario;
+	private Long idUsuario;
+	private Long idForo;
 	public Long getIdForoUsuario() {
 		return idForoUsuario;
 	}
 	public void setIdForoUsuario(Long idForoUsuario) {
 		this.idForoUsuario = idForoUsuario;
 	}
+	public Long getIdUsuario() {
+		return idUsuario;
+	}
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+	public Long getIdForo() {
+		return idForo;
+	}
+	public void setIdForo(Long idForo) {
+		this.idForo = idForo;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	
 }
