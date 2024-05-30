@@ -23,24 +23,24 @@ public class ForoRestController {
 	@Autowired 
 	private IForoService foroService;
 	
-	@GetMapping("/listar")
+	@GetMapping("/foros")
 	public List <Foro> indext(){
 		
 		return foroService.findAll();	
 	}
 	
-	@GetMapping("/buscar/{idForo}")
+	@GetMapping("/foros/{idForo}")
 	public Foro show(@PathVariable Long idForo) {
 		return foroService.findById(idForo);
 	}
 	
-	@PostMapping("/guardar")
+	@PostMapping("/foros")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Foro update(@RequestBody Foro foro) {
 		return foroService.save(foro);
 	}
 	
-	@PutMapping("/editar/{id}")
+	@PutMapping("/foros/{idForo}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Foro update(@RequestBody Foro foro, @PathVariable Long idForo) {
 		
