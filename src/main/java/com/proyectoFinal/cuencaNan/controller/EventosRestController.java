@@ -24,26 +24,26 @@ public class EventosRestController {
 	private IEventosService eventoService;
 	
 	// listar_todas_los_eventos
-		@GetMapping("/listar")
+		@GetMapping("/eventos")
 		public List<Eventos> indext() {
 			return eventoService.findAll();
 		}
 		
 		// buscar_un evento_por_id
-		@GetMapping("/buscar/{id}")
+		@GetMapping("/eventos/{id_evento}")
 		public Eventos show(@PathVariable Long id) {
 			return eventoService.findById(id);
 		}	
 		
 		// guardar_un_evento
-		@PostMapping("/guardar")
+		@PostMapping("/eventos")
 		@ResponseStatus(HttpStatus.CREATED)
 		public Eventos create(@RequestBody Eventos eventos) {
 			return eventoService.save(eventos);
 		}
 		
 		// editar_un_evento
-		@PutMapping("/editar/{id}")
+		@PutMapping("/eventos/{id_evento}")
 		@ResponseStatus(HttpStatus.CREATED)
 		public Eventos update(@RequestBody Eventos eventos, @PathVariable Long id) {
 			Eventos eventoA = eventoService.findById(id);
@@ -51,7 +51,7 @@ public class EventosRestController {
 		}
 
 		// eliminar_un_evento
-		@DeleteMapping("/eliminar/{id}")
+		@DeleteMapping("/eventos/{id_evento}")
 		@ResponseStatus(HttpStatus.NO_CONTENT)
 		public void delete(@PathVariable Long id) {
 			eventoService.delete(id);
