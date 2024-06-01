@@ -11,7 +11,7 @@ import jakarta.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "administradores", uniqueConstraints = { @UniqueConstraint(columnNames = { "cedula" }) })
-public class Administrador implements Serializable {
+public class Administrador  extends Persona {
 
 	private static final long serialVersionUID = 1L;
 	@Id

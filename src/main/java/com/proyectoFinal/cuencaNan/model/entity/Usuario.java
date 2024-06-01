@@ -16,7 +16,7 @@ import jakarta.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "usuarios", uniqueConstraints = { @UniqueConstraint(columnNames = { "cedula" }) })
-public class Usuario implements Serializable {
+public class Usuario extends Persona {
 
 	private static final long serialVersionUID = 1L;
 	@Id
