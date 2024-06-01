@@ -127,8 +127,8 @@ public class PersonaRestController {
 	}
 
 	/////////// LOGIN SOLO usuario
-	@PostMapping("/loginEstudiante")
-	public ResponseEntity<?> loginEstudiante(@RequestBody Map<String, String> credentials) {
+	@PostMapping("/loginUsuario")
+	public ResponseEntity<?> loginUsuario(@RequestBody Map<String, String> credentials) {
 		String correo = credentials.get("correo");
 		String contrasena = credentials.get("contrasena");
 
@@ -145,9 +145,9 @@ public class PersonaRestController {
 				return ResponseEntity.ok(persona);
 			} else {
 				// Si la persona autenticada no es un usuario, denegar el acceso
-				System.out.println("Inicio de sesión denegado. Solo se permite el acceso a estudiantes.");
+				System.out.println("Inicio de sesión denegado. Solo se permite el acceso a usuarios.");
 				return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-						.body("Inicio de sesión denegado. Solo se permite el acceso a estudiantes.");
+						.body("Inicio de sesión denegado. Solo se permite el acceso a usuarios.");
 			}
 		} else {
 			System.out.println("Falló el inicio de sesión para el correo: " + correo);
