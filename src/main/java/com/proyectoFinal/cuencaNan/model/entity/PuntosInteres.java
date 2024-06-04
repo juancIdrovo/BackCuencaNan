@@ -31,7 +31,7 @@ public class PuntosInteres implements Serializable {
 	private double longitud;
 
 	@OneToMany(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idEventoFk")
+	@JoinColumn(name = "idPuntoIFk")
 	private List<EventosPuntoInteres> listaEventosPuntosInt;
 	
 	@OneToMany(fetch = FetchType.LAZY)

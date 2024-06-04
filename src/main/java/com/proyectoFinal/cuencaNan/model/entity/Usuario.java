@@ -31,6 +31,14 @@ public class Usuario implements Serializable {
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "idUsuario")
 	private List<ForoUsuario> foroUsuario;
+	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "idusuario")
+	private List<Usuariopuntosinteres> listaUsuarioPI;
+	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "idUsuario")
+	private List<Comentario> listaComentarios;
 
 	public Long getIdUsuario() {
 		return idUsuario;
