@@ -28,6 +28,7 @@ public class Eventos implements Serializable {
 
 	@Column(nullable = false, unique = true)
 	private Long id_tipoEvento;
+	private Long id_Administrador;
 	private String categoria;
 	private String nombre;
 	@Temporal(TemporalType.DATE)
@@ -90,4 +91,13 @@ public class Eventos implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+	public Long getId_Administrador() {
+		return id_Administrador;
+	}
+
+	public void setId_Administrador(Long id_Administrador) {
+		this.id_Administrador = id_Administrador;
+	}
+
 }
