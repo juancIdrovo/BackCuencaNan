@@ -33,7 +33,7 @@ public class UsuarioRestController {
     }
 
     // buscar_un usuario_por_id
-    @GetMapping("/usuarios/{idUsuario}")
+    @GetMapping("/usuarios/{id_usuario}")
     public Usuario show(@PathVariable Long id) {
         return usuarioservice.findById(id);
     }
@@ -46,7 +46,7 @@ public class UsuarioRestController {
     }
 
     // editar_un_usuario
-    @PutMapping("/usuarios/{idUsuario}")
+    @PutMapping("/usuarios/{id_usuario}")
     @ResponseStatus(HttpStatus.CREATED)
     public Usuario update(@RequestBody Usuario usuario, @PathVariable Long id) {
         Usuario usuarioActual = usuarioservice.findById(id);
@@ -55,7 +55,7 @@ public class UsuarioRestController {
     }
 
     // eliminar_un_usuario
-    @DeleteMapping("/usuarios/{idUsuario}")
+    @DeleteMapping("/usuarios/{id_usuario}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
         usuarioservice.delete(id);
@@ -63,7 +63,7 @@ public class UsuarioRestController {
 
     // Login solo para usuario
 
-    @PostMapping("/loginusuario")
+    @PostMapping("/usuarios/loginusuario")
     public ResponseEntity<?> logginUsuario(@RequestBody Map<String, String> credentials) {
         String mail = credentials.get("mail");
         String contrasena = credentials.get("contrasena");
