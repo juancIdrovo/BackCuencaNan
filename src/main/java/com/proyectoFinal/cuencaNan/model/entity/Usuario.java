@@ -176,7 +176,7 @@ public class Usuario implements Serializable {
 
 ////constructores
 	public Usuario(Long id_usuario, String cedula, String nombres, String apellidos, String mail, String direccion,
-			char genero, Date fecha_nacimiento, String nombre_usuario, String contrasena, String celular, String foto,
+			String genero, Date fecha_nacimiento, String nombre_usuario, String contrasena, String celular, String foto,
 			String intereses, List<ForoUsuario> foroUsuario) {
 		super();
 		this.id_usuario = id_usuario;
