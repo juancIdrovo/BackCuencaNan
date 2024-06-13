@@ -20,8 +20,6 @@ import jakarta.persistence.UniqueConstraint;
 
 public class Usuario implements Serializable {
 
-
-
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,23 +29,23 @@ public class Usuario implements Serializable {
 	private String apellidos;
 	private String mail;
 	private String direccion;
-	private char genero;
+	private String genero;
 	private Date fecha_nacimiento;
 	private String nombre_usuario;
 	private String contrasena;
 	private String celular;
 	private String foto;
-	
+
 	private String intereses;
 
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "idUsuario")
 	private List<ForoUsuario> foroUsuario;
-	
+
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "idusuario")
 	private List<Usuariopuntosinteres> listaUsuarioPI;
-	
+
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "idUsuario")
 	private List<Comentario> listaComentarios;
@@ -75,8 +73,6 @@ public class Usuario implements Serializable {
 	public void setIntereses(String intereses) {
 		this.intereses = intereses;
 	}
-	
-	
 
 	public Long getId_usuario() {
 		return id_usuario;
@@ -118,11 +114,11 @@ public class Usuario implements Serializable {
 		this.direccion = direccion;
 	}
 
-	public char getGenero() {
+	public String getGenero() {
 		return genero;
 	}
 
-	public void setGenero(char genero) {
+	public void setGenero(String genero) {
 		this.genero = genero;
 	}
 
@@ -178,7 +174,6 @@ public class Usuario implements Serializable {
 		this.foroUsuario = foroUsuario;
 	}
 
-	
 ////constructores
 	public Usuario(Long id_usuario, String cedula, String nombres, String apellidos, String mail, String direccion,
 			char genero, Date fecha_nacimiento, String nombre_usuario, String contrasena, String celular, String foto,
@@ -200,8 +195,8 @@ public class Usuario implements Serializable {
 		this.foroUsuario = foroUsuario;
 	}
 
-public Usuario() {
-	super();
-}
+	public Usuario() {
+		super();
+	}
 
 }
