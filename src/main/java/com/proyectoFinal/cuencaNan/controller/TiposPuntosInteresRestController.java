@@ -50,6 +50,7 @@ public class TiposPuntosInteresRestController {
     	Tipospuntosinteres puntoactual = Tipospuntosinteresservice.findById(idtipospuntosinteres);
     	puntoactual.setNombre(tipopuntosinteres.getNombre());
     	puntoactual.setDescripcion(tipopuntosinteres.getDescripcion());
+    	puntoactual.setCategoria(tipopuntosinteres.getCategoria());
     	return Tipospuntosinteresservice.save(puntoactual);
     }
     
