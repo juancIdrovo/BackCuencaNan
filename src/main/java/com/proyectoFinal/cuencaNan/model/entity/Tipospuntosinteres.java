@@ -23,6 +23,7 @@ public class Tipospuntosinteres implements Serializable {
 	private Long idtipospuntosinteres;
 	private String nombre;
 	private String descripcion;
+	private String categoria;
 	
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idTipoPuntoInteres")
@@ -52,4 +53,26 @@ public class Tipospuntosinteres implements Serializable {
 		this.descripcion = descripcion;
 	}
 
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+	public List<PuntosInteres> getListaPuntosInteres() {
+		return listaPuntosInteres;
+	}
+
+	public void setListaPuntosInteres(List<PuntosInteres> listaPuntosInteres) {
+		this.listaPuntosInteres = listaPuntosInteres;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
+	
 }

@@ -175,25 +175,7 @@ public class Usuario implements Serializable {
 	}
 
 ////constructores
-	public Usuario(Long id_usuario, String cedula, String nombres, String apellidos, String mail, String direccion,
-			String genero, Date fecha_nacimiento, String nombre_usuario, String contrasena, String celular, String foto,
-			String intereses, List<ForoUsuario> foroUsuario) {
-		super();
-		this.id_usuario = id_usuario;
-		this.cedula = cedula;
-		this.nombres = nombres;
-		this.apellidos = apellidos;
-		this.mail = mail;
-		this.direccion = direccion;
-		this.genero = genero;
-		this.fecha_nacimiento = fecha_nacimiento;
-		this.nombre_usuario = nombre_usuario;
-		this.contrasena = contrasena;
-		this.celular = celular;
-		this.foto = foto;
-		this.intereses = intereses;
-		this.foroUsuario = foroUsuario;
-	}
+
 
 	public Usuario() {
 		super();
