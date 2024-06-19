@@ -50,17 +50,5 @@ public class TiposEventos implements Serializable{
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
-	public List<Eventos> getEventos() {
-		return eventos;
-	}
-
-	public void setEventos(List<Eventos> eventos) {
-		this.eventos = eventos;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 		
 }
