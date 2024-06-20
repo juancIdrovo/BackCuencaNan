@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.proyectoFinal.cuencaNan.model.entity.Foto;
 import com.proyectoFinal.cuencaNan.model.entity.Tipospuntosinteres;
-import com.proyectoFinal.cuencaNan.model.service.IFotoService;
 import com.proyectoFinal.cuencaNan.model.service.ITipospuntosinteresService;
 
 @CrossOrigin(origins= {"http://localhost:4200"})
@@ -28,39 +26,39 @@ public class TiposPuntosInteresRestController {
 	
 	
 	@Autowired
-	private ITipospuntosinteresService interesService;
+	private ITipospuntosinteresService Tipospuntosinteresservice;
 
 	@GetMapping("/tipospuntosinteres")
 	public List<Tipospuntosinteres> indext() {
-		return interesService.findAll();
+		return Tipospuntosinteresservice.findAll();
 
 	}
 	
     @GetMapping("/tipospuntosinteres/{idtipospuntosinteres}")
     public Tipospuntosinteres show(@PathVariable Long idtipospuntosinteres) {
-    	return interesService.findById(idtipospuntosinteres);
+    	return Tipospuntosinteresservice.findById(idtipospuntosinteres);
     }
     
     @PostMapping("/tipospuntosinteres")
     @ResponseStatus(HttpStatus.CREATED)
     public Tipospuntosinteres create(@RequestBody Tipospuntosinteres idtipospuntosinteres) {
-    	return interesService.save(idtipospuntosinteres);
+    	return Tipospuntosinteresservice.save(idtipospuntosinteres);
     }
     
     @PutMapping("/tipospuntosinteres/{idtipospuntosinteres}")
     @ResponseStatus(HttpStatus.CREATED)
     public Tipospuntosinteres update(@RequestBody Tipospuntosinteres tipopuntosinteres, @PathVariable Long idtipospuntosinteres) {
-    	Tipospuntosinteres puntoactual = interesService.findById(idtipospuntosinteres);
+    	Tipospuntosinteres puntoactual = Tipospuntosinteresservice.findById(idtipospuntosinteres);
     	puntoactual.setNombre(tipopuntosinteres.getNombre());
     	puntoactual.setDescripcion(tipopuntosinteres.getDescripcion());
     	puntoactual.setCategoria(tipopuntosinteres.getCategoria());
-    	return interesService.save(puntoactual);
+    	return Tipospuntosinteresservice.save(puntoactual);
     }
     
     @DeleteMapping("/tipospuntosinteres/{idtipospuntosinteres}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long idtipospuntosinteres) {
-    	interesService.delete(idtipospuntosinteres);
+    	Tipospuntosinteresservice.delete(idtipospuntosinteres);
     }
     
     
@@ -68,7 +66,7 @@ public class TiposPuntosInteresRestController {
     public List<Tipospuntosinteres> buscar(@RequestParam(required = false) String nombre,
                                            @RequestParam(required = false) String descripcion,
                                            @RequestParam(required = false) String categoria) {
-        return interesService.buscarPorCriterios(nombre, descripcion, categoria);
+        return Tipospuntosinteresservice.buscarPorCriterios(nombre, descripcion, categoria);
     }
     
 }

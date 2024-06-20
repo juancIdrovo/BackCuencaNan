@@ -13,33 +13,33 @@ import com.proyectoFinal.cuencaNan.model.entity.Tipospuntosinteres;
 public class TipospuntosinteresServiceimpl implements ITipospuntosinteresService {
 
 	@Autowired
-	private ITipospuntosinteresDao interesDao;
+	private ITipospuntosinteresDao Tipospuntosinteres;
 
 	@Override
 	@Transactional(readOnly = true)
 	public List<Tipospuntosinteres> findAll() {
-		return (List<Tipospuntosinteres>) interesDao.findAll();
+		return (List<Tipospuntosinteres>) Tipospuntosinteres.findAll();
 	}
 
 	@Override
 	@Transactional
 	public Tipospuntosinteres save(Tipospuntosinteres tipopuntointeres) {
 
-		return interesDao.save(tipopuntointeres);
+		return Tipospuntosinteres.save(tipopuntointeres);
 	}
 
 	@Override
 	@Transactional(readOnly = true)
 	public Tipospuntosinteres findById(Long idtipospuntosinteres) {
 
-		return interesDao.findById(idtipospuntosinteres).orElse(null);
+		return Tipospuntosinteres.findById(idtipospuntosinteres).orElse(null);
 	}
 
 	@Override
 	@Transactional
 	public void delete(Long idtipospuntosinteres) {
 
-		interesDao.deleteById(idtipospuntosinteres);
+		Tipospuntosinteres.deleteById(idtipospuntosinteres);
 
 	}
 	
@@ -47,25 +47,25 @@ public class TipospuntosinteresServiceimpl implements ITipospuntosinteresService
     @Override
     @Transactional(readOnly = true)
     public List<Tipospuntosinteres> findByNombre(String nombre) {
-        return interesDao.findByNombreContaining(nombre);
+        return Tipospuntosinteres.findByNombreContaining(nombre);
     }
 
     @Override
     @Transactional(readOnly = true)
     public List<Tipospuntosinteres> findByDescripcion(String descripcion) {
-        return interesDao.findByDescripcionContaining(descripcion);
+        return Tipospuntosinteres.findByDescripcionContaining(descripcion);
     }
 
     @Override
     @Transactional(readOnly = true)
     public List<Tipospuntosinteres> findByCategoria(String categoria) {
-        return interesDao.findByCategoriaContaining(categoria);
+        return Tipospuntosinteres.findByCategoriaContaining(categoria);
     }
 
     @Override
     @Transactional(readOnly = true)
     public List<Tipospuntosinteres> buscarPorCriterios(String nombre, String descripcion, String categoria) {
-        return interesDao.buscarPorCriterios(nombre, descripcion, categoria);
+        return Tipospuntosinteres.buscarPorCriterios(nombre, descripcion, categoria);
     }
 
 }
