@@ -73,6 +73,4 @@ public class Tipospuntosinteres implements Serializable {
 		return serialVersionUID;
 	}
 	
-	
-	
 }

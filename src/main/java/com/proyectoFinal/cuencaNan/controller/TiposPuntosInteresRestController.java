@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,39 +28,47 @@ public class TiposPuntosInteresRestController {
 	
 	
 	@Autowired
-	private ITipospuntosinteresService Tipospuntosinteresservice;
+	private ITipospuntosinteresService interesService;
 
 	@GetMapping("/tipospuntosinteres")
 	public List<Tipospuntosinteres> indext() {
-		return Tipospuntosinteresservice.findAll();
+		return interesService.findAll();
 
 	}
 	
     @GetMapping("/tipospuntosinteres/{idtipospuntosinteres}")
     public Tipospuntosinteres show(@PathVariable Long idtipospuntosinteres) {
-    	return Tipospuntosinteresservice.findById(idtipospuntosinteres);
+    	return interesService.findById(idtipospuntosinteres);
     }
     
     @PostMapping("/tipospuntosinteres")
     @ResponseStatus(HttpStatus.CREATED)
     public Tipospuntosinteres create(@RequestBody Tipospuntosinteres idtipospuntosinteres) {
-    	return Tipospuntosinteresservice.save(idtipospuntosinteres);
+    	return interesService.save(idtipospuntosinteres);
     }
     
     @PutMapping("/tipospuntosinteres/{idtipospuntosinteres}")
     @ResponseStatus(HttpStatus.CREATED)
     public Tipospuntosinteres update(@RequestBody Tipospuntosinteres tipopuntosinteres, @PathVariable Long idtipospuntosinteres) {
-    	Tipospuntosinteres puntoactual = Tipospuntosinteresservice.findById(idtipospuntosinteres);
+    	Tipospuntosinteres puntoactual = interesService.findById(idtipospuntosinteres);
     	puntoactual.setNombre(tipopuntosinteres.getNombre());
     	puntoactual.setDescripcion(tipopuntosinteres.getDescripcion());
     	puntoactual.setCategoria(tipopuntosinteres.getCategoria());
-    	return Tipospuntosinteresservice.save(puntoactual);
+    	return interesService.save(puntoactual);
     }
     
     @DeleteMapping("/tipospuntosinteres/{idtipospuntosinteres}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long idtipospuntosinteres) {
-    	Tipospuntosinteresservice.delete(idtipospuntosinteres);
+    	interesService.delete(idtipospuntosinteres);
+    }
+    
+    
+    @GetMapping("/tipospuntosinteres/buscar")
+    public List<Tipospuntosinteres> buscar(@RequestParam(required = false) String nombre,
+                                           @RequestParam(required = false) String descripcion,
+                                           @RequestParam(required = false) String categoria) {
+        return interesService.buscarPorCriterios(nombre, descripcion, categoria);
     }
     
 }
