@@ -13,6 +13,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
@@ -34,7 +35,11 @@ public class Usuario implements Serializable {
 	private String nombre_usuario;
 	private String contrasena;
 	private String celular;
-	private String foto;
+	
+	@Transient
+	private String fotoUrl;
+	
+	private String fotoPath;
 
 	private String intereses;
 
@@ -154,14 +159,6 @@ public class Usuario implements Serializable {
 		this.celular = celular;
 	}
 
-	public String getFoto() {
-		return foto;
-	}
-
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
-
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -176,6 +173,22 @@ public class Usuario implements Serializable {
 
 ////constructores
 
+
+	public String getFotoUrl() {
+		return fotoUrl;
+	}
+
+	public void setFotoUrl(String fotoUrl) {
+		this.fotoUrl = fotoUrl;
+	}
+
+	public String getFotoPath() {
+		return fotoPath;
+	}
+
+	public void setFotoPath(String fotoPath) {
+		this.fotoPath = fotoPath;
+	}
 
 	public Usuario() {
 		super();

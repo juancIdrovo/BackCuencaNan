@@ -2,6 +2,7 @@ package com.proyectoFinal.cuencaNan.controller;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.proyectoFinal.cuencaNan.aws3.S3Service;
 import com.proyectoFinal.cuencaNan.model.entity.Usuario;
 import com.proyectoFinal.cuencaNan.model.service.IUsuarioService;
 
@@ -27,12 +30,17 @@ public class UsuarioRestController {
 
     @Autowired
     private IUsuarioService usuarioservice;
+    
+    @Autowired
+	private S3Service s3Service;
 
     // listar_todas_los_usuarios
     @GetMapping("/usuarios")
     public List<Usuario> indext() {
-        return usuarioservice.findAll();
-    }
+    	return usuarioservice.findAll().stream().peek(usuario -> {
+			usuario.setFotoUrl(s3Service.getObjectUrl(usuario.getFotoPath()));
+		}).collect(Collectors.toList());
+	}
 
     // buscar_un usuario_por_id
     @GetMapping("/usuarios/{id_usuario}")
@@ -44,9 +52,11 @@ public class UsuarioRestController {
     @PostMapping("/usuarios")
     @ResponseStatus(HttpStatus.CREATED)
     public Usuario create(@RequestBody Usuario usuario) {
-        return usuarioservice.save(usuario);
-    }
-
+        usuarioservice.save(usuario);
+		usuario.setFotoUrl(s3Service.getObjectUrl(usuario.getFotoPath()));
+		return usuario;
+	}
+	
     // editar_un_usuario
     @PutMapping("/usuarios/{id_usuario}")
     @ResponseStatus(HttpStatus.CREATED)
