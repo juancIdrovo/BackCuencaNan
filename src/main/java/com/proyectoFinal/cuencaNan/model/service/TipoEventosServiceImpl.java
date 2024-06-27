@@ -21,9 +21,9 @@ public class TipoEventosServiceImpl implements ITipoEventosService{
 	}
 
 	@Override
-	public TiposEventos findById(Long id) {
+	public TiposEventos findById(Long id_tipoEvento) {
 		// TODO Auto-generated method stub
-		 return tipoEventoDao.findById(id).orElse(null);
+		 return tipoEventoDao.findById(id_tipoEvento).orElse(null);
 	}
 
 	@Override

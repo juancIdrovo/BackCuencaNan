@@ -7,7 +7,7 @@ import com.proyectoFinal.cuencaNan.model.entity.TiposEventos;
 public interface ITipoEventosService {
 
 	public List<TiposEventos> findAll();
-    public TiposEventos findById(Long id);
+    public TiposEventos findById(Long id_tipoEvento);
     public TiposEventos save(TiposEventos tipoEvento);
-    public void delete(Long id);
+    public void delete(Long id_tipoEvento);
 }

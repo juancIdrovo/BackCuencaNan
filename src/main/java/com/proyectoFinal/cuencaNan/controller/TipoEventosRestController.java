@@ -35,8 +35,8 @@ public class TipoEventosRestController {
 
 		// buscar_un tipoEvento_por_id
 		@GetMapping("/tipo_eventos/{id_tipoEvento}")
-		public TiposEventos show(@PathVariable Long id) {
-			return tipoeventoService.findById(id);
+		public TiposEventos show(@PathVariable Long id_tipoEvento) {
+			return tipoeventoService.findById(id_tipoEvento);
 		}
 		
 		// guardar_un_tipoEvento
@@ -49,8 +49,8 @@ public class TipoEventosRestController {
 		// editar_un_tipoEvento
 		@PutMapping("/tipo_eventos/{id_tipoEvento}")
 		@ResponseStatus(HttpStatus.CREATED)
-		public TiposEventos update(@RequestBody TiposEventos tipoevento, @PathVariable Long id) {
-			TiposEventos TipoEventoActual = tipoeventoService.findById(id);
+		public TiposEventos update(@RequestBody TiposEventos tipoevento, @PathVariable Long id_tipoEvento) {
+			TiposEventos TipoEventoActual = tipoeventoService.findById(id_tipoEvento);
 			return tipoeventoService.save(TipoEventoActual);
 		}
 

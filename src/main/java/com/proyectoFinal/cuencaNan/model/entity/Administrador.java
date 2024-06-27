@@ -15,7 +15,6 @@ import jakarta.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "administradores", uniqueConstraints = { @UniqueConstraint(columnNames = { "cedula" }) })
-
 public class Administrador implements Serializable {
 
 
