@@ -39,12 +39,11 @@ INSERT INTO foto (fotoid, foto) VALUES (4, 'foto4.jpg');
 INSERT INTO foto (fotoid, foto) VALUES (5, 'foto5.jpg');
 
 
-INSERT INTO administradores (id_administrador, cedula) VALUES (1, '0606060606');
-INSERT INTO administradores (id_administrador, cedula) VALUES (2, '0707070707');
-INSERT INTO administradores (id_administrador, cedula) VALUES (3, '0808080808');
-INSERT INTO administradores (id_administrador, cedula) VALUES (4, '0909090909');
-INSERT INTO administradores (id_administrador, cedula) VALUES (5, '1010101010');
-
+INSERT INTO administradores (id_administrador, apellidos, cedula, celular, contrasenia, email, nombre_usuario, nombres) VALUES (1, 'Lupercio', '0606060606', '0987456325', 'esteban45', 'esteban@gmail.com', 'esteban12', 'Esteban');
+INSERT INTO administradores (id_administrador, apellidos, cedula, celular, contrasenia, email, nombre_usuario, nombres) VALUES (2, 'Idrovo', '0707070707', '0945210361', 'xavier23', 'xavi@hotmail.com', 'xavi45', 'Xavier');
+INSERT INTO administradores (id_administrador, apellidos, cedula, celular, contrasenia, email, nombre_usuario, nombres) VALUES (3, 'Abad', '0808080808', '0987412569', 'nicole69', 'nicole@hotmail.com', 'nic5', 'Nicole');
+INSERT INTO administradores (id_administrador, apellidos, cedula, celular, contrasenia, email, nombre_usuario, nombres) VALUES (4, 'Gonzales', '0909090909', '0920014582', 'juanci1', 'juanidrovo@gmail.com', 'jsio420', 'Juan');
+INSERT INTO administradores (id_administrador, apellidos, cedula, celular, contrasenia, email, nombre_usuario, nombres) VALUES (5, 'Gomez', '1010101010', '0987523010', 'paula0', 'pau@gmail.com', 'pauli6', 'Paula');
 
 INSERT INTO tipo_eventos (id_tipo_evento, descripcion, nombre_tipo_evento) VALUES (1, 'Evento cultural relacionado con la música 1', 'Festival 1');
 INSERT INTO tipo_eventos (id_tipo_evento, descripcion, nombre_tipo_evento) VALUES (2, 'Evento deportivo relacionado con carreras 2', 'Carrera 2');

@@ -24,6 +24,12 @@ public class Administrador implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idAdministrador;
 	private String cedula;
+	private String nombres;
+	private String apellidos;
+	private String email;
+	private String nombre_usuario;
+	private String contrasenia;
+	private String celular;
 
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_Administrador")
@@ -47,6 +53,54 @@ public class Administrador implements Serializable {
 
 	public void setCedula(String cedula) {
 		this.cedula = cedula;
+	}
+
+	public String getNombres() {
+		return nombres;
+	}
+
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
+	}
+
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getNombre_usuario() {
+		return nombre_usuario;
+	}
+
+	public void setNombre_usuario(String nombre_usuario) {
+		this.nombre_usuario = nombre_usuario;
+	}
+
+	public String getContrasenia() {
+		return contrasenia;
+	}
+
+	public void setContrasenia(String contrasenia) {
+		this.contrasenia = contrasenia;
+	}
+
+	public String getCelular() {
+		return celular;
+	}
+
+	public void setCelular(String celular) {
+		this.celular = celular;
 	}
 
 }
