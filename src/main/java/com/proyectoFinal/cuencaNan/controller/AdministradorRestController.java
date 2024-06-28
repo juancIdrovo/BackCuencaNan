@@ -35,8 +35,8 @@ public class AdministradorRestController {
 
 	// buscar_un administrador_por_id
 	@GetMapping("/administradores/{idAdministrador}")
-	public Administrador show(@PathVariable Long id) {
-		return administradorservice.findById(id);
+	public Administrador show(@PathVariable Long idAdministrador) {
+		return administradorservice.findById(idAdministrador);
 	}
 
 	// guardar_un_administrador
