@@ -25,11 +25,11 @@ INSERT INTO comentarios (id_comentario, comentario, id_foro, id_usuario) VALUES 
 INSERT INTO comentarios (id_comentario, comentario, id_foro, id_usuario) VALUES (5, 'Este es un comentario de ejemplo 5.', 5, 5);
 
 
-INSERT INTO tipospuntosinteres (idtipospuntosinteres, descripcion, nombre, categoria) VALUES (1, 'Parque', 'Calderon Park, Mariscal Sucre, Cuenca, Ecuador', 'Parque emblemático');
-INSERT INTO tipospuntosinteres (idtipospuntosinteres, descripcion, nombre, categoria) VALUES (2, 'Parque en el centro de la ciudad 2', 'Parque Central 2', 'Recreación 2');
-INSERT INTO tipospuntosinteres (idtipospuntosinteres, descripcion, nombre, categoria) VALUES (3, 'Parque en el centro de la ciudad 3', 'Parque Central 3', 'Recreación 3');
-INSERT INTO tipospuntosinteres (idtipospuntosinteres, descripcion, nombre, categoria) VALUES (4, 'Parque en el centro de la ciudad 4', 'Parque Central 4', 'Recreación 4');
-INSERT INTO tipospuntosinteres (idtipospuntosinteres, descripcion, nombre, categoria) VALUES (5, 'Parque en el centro de la ciudad 5', 'Parque Central 5', 'Recreación 5');
+INSERT INTO tipospuntosinteres (idtipospuntosinteres, descripcion, nombre, categoria) VALUES (1, 'Parques recreacionales', 'Parques', 'Parques');
+INSERT INTO tipospuntosinteres (idtipospuntosinteres, descripcion, nombre, categoria) VALUES (2, 'Puntos recreacionales para hacer deportes', 'Deportes', 'Deportes');
+INSERT INTO tipospuntosinteres (idtipospuntosinteres, descripcion, nombre, categoria) VALUES (3, 'Lagunas y rios', 'Cuerpos de Agua', 'Cuerpos de Agua');
+INSERT INTO tipospuntosinteres (idtipospuntosinteres, descripcion, nombre, categoria) VALUES (4, 'Iglesias y Catedrales en Cuenca', 'Iglesias y Catedrales', 'Iglesias y Catedrales');
+INSERT INTO tipospuntosinteres (idtipospuntosinteres, descripcion, nombre, categoria) VALUES (5, 'Puntos estrategicos para observar la ciudad', 'Miradores', 'Miradores');
 
 
 INSERT INTO foto (fotoid, foto) VALUES (1, 'foto1.jpg');
@@ -58,12 +58,12 @@ INSERT INTO eventos (id_evento, fecha_fin, fecha_inicio, id_administrador, id_ti
 INSERT INTO eventos (id_evento, fecha_fin, fecha_inicio, id_administrador, id_tipo_evento, nombre) VALUES (4, '2023-12-28', '2023-01-04', 4, 4, 'Feria de Comida 4');
 
 
-INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre) VALUES (1, 1, 1, 1, -2.8974172, -79.0044893, 'Calderon Park, Mariscal Sucre, Cuenca, Ecuador');
-INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre) VALUES (2, 2, 2, 2, -2.90155, -79.00553, 'Parque Central 2');
-INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre) VALUES (3, 3, 3, 3, -2.90255, -79.00653, 'Parque Central 3');
-INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre) VALUES (4, 4, 4, 4, -2.90355, -79.00753, 'Parque Central 4');
-INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre) VALUES (5, 5, 5, 5, -2.90455, -79.00853, 'Parque Central 5');
-
+INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre) VALUES (1, 1, 1, 1, -2.8974172, -79.0044893, 'Parque Calderon');
+INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre) VALUES (2, 2, 2, 2, -2.9307079, -78.9972698, 'Turi Bike Park');
+INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre) VALUES (3, 3, 3, 5, -2.9226683, -79.011736, 'El Columpio De Turi');
+INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre) VALUES (4, 4, 4, 4, -2.90355, -79.00753, 'Iglesia del Sagrario');
+INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre) VALUES (5, 5, 5, 3, -2.7798513, -79.22467259999999, 'Laguna Toreadora');
+INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre) VALUES (6, 1, 1, 1, -2.9028129, -79.03096939999999, 'Parque del Dragon Cuenca, Ecuador');
 
 INSERT INTO eventospuntointeres (id, id_evento_fk, id_puntoifk) VALUES (1, 1, 1);
 INSERT INTO eventospuntointeres (id, id_evento_fk, id_puntoifk) VALUES (2, 2, 2);
