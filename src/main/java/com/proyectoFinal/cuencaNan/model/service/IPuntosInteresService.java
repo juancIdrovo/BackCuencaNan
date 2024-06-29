@@ -13,4 +13,6 @@ public interface IPuntosInteresService {
 	public PuntosInteres findById(Long id);
 	
 	public void delete (Long id);
+	
+	List<PuntosInteres> findByNombre(String nombre);
 }

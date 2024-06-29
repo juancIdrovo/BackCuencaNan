@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import com.proyectoFinal.cuencaNan.model.dao.IPuntoInteresDao;
 import com.proyectoFinal.cuencaNan.model.entity.PuntosInteres;
@@ -42,5 +43,13 @@ public class PuntosInteresImpl implements IPuntosInteresService{
 		// TODO Auto-generated method stub
 		interesDao.deleteById(id);
 	}
+
+	@Override
+    @Transactional(readOnly = true)
+    public List<PuntosInteres> findByNombre(String nombre) {
+        return interesDao.findByNombreContainingIgnoreCase(nombre);
+    }
+	
+	
 
 }
