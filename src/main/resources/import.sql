@@ -32,7 +32,7 @@ INSERT INTO tipospuntosinteres (idtipospuntosinteres, descripcion, nombre, categ
 INSERT INTO tipospuntosinteres (idtipospuntosinteres, descripcion, nombre, categoria) VALUES (5, 'Puntos estrategicos para observar la ciudad', 'Miradores', 'Miradores');
 
 
-INSERT INTO foto (fotoid, foto) VALUES (1, 'foto1.jpg');
+INSERT INTO foto (fotoid, foto) VALUES (1, 'https://practicasjohnsiguenza.s3.amazonaws.com/8fa81ac4-f1a6-4d8a-b5a1-4c5241b7a80e.jpg');
 INSERT INTO foto (fotoid, foto) VALUES (2, 'foto2.jpg');
 INSERT INTO foto (fotoid, foto) VALUES (3, 'foto3.jpg');
 INSERT INTO foto (fotoid, foto) VALUES (4, 'foto4.jpg');
