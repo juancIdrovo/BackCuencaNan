@@ -58,12 +58,12 @@ INSERT INTO eventos (id_evento, fecha_fin, fecha_inicio, id_administrador, id_ti
 INSERT INTO eventos (id_evento, fecha_fin, fecha_inicio, id_administrador, id_tipo_evento, nombre) VALUES (4, '2023-12-28', '2023-01-04', 4, 4, 'Feria de Comida 4');
 
 
-INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre) VALUES (1, 1, 1, 1, -2.8974172, -79.0044893, 'Parque Calderon');
-INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre) VALUES (2, 2, 2, 2, -2.9307079, -78.9972698, 'Turi Bike Park');
-INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre) VALUES (3, 3, 3, 5, -2.9226683, -79.011736, 'El Columpio De Turi');
-INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre) VALUES (4, 4, 4, 4, -2.90355, -79.00753, 'Iglesia del Sagrario');
-INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre) VALUES (5, 5, 5, 3, -2.7798513, -79.22467259999999, 'Laguna Toreadora');
-INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre) VALUES (6, 1, 1, 1, -2.9028129, -79.03096939999999, 'Parque del Dragon Cuenca, Ecuador');
+INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre, descripcion) VALUES (1, 1, 1, 1, -2.8974172, -79.0044893, 'Parque Abdón Calderón', 'Oficialmente Parque Mayor Abdón Calderón​, antiguamente conocida también como Plaza República o Plaza de Armas.');
+INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre, descripcion) VALUES (2, 2, 2, 2, -2.9307079, -78.9972698, 'Turi Bike Park', 'Parque extremo para bicicletas de montaña');
+INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre, descripcion) VALUES (3, 3, 3, 5, -2.9226683, -79.011736, 'El Columpio De Turi', 'Lugar turístico donde te puedes columpiar y ver la ciudad de Cuenca, Ecuador');
+INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre, descripcion) VALUES (4, 4, 4, 4, -2.90355, -79.00753, 'Iglesia del Sagrario', 'Esta iglesia se encuentra frente al parque central, mantiene el estilo barroco renacentista, siendo la estructura arquitectónica más antigua de la ciudad de Cuenca');
+INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre, descripcion) VALUES (5, 5, 5, 3, -2.7798513, -79.22467259999999, 'Laguna Toreadora', 'La Laguna Toreadora es una laguna ubicada en el Parque Nacional Cajas, a una altitud de aproximadamente 4.000 metros sobre el nivel del mar.');
+INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre, descripcion) VALUES (6, 1, 1, 1, -2.9028129, -79.03096939999999, 'Parque del Dragon Cuenca, Ecuador', 'Parque, con un dragón metálico que vota fugo por su boca!');
 
 INSERT INTO eventospuntointeres (id, id_evento_fk, id_puntoifk) VALUES (1, 1, 1);
 INSERT INTO eventospuntointeres (id, id_evento_fk, id_puntoifk) VALUES (2, 2, 2);

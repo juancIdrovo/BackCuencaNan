@@ -53,6 +53,7 @@ public class PuntosInteresRestController {
 		interesActual.setLatitud(interes.getLatitud());
 		interesActual.setLongitud(interes.getLongitud());
 		interesActual.setNombre(interes.getNombre());
+		interesActual.setDescripcion(interes.getDescripcion());
 		return interesService.save(interesActual);
 	}
 

@@ -27,6 +27,7 @@ public class PuntosInteres implements Serializable {
 	private Long idTipoPuntoInteres;
 	private Long idFoto;
 	private String nombre;
+	private String descripcion;
 	private double latitud;
 	private double longitud;
 
@@ -93,5 +94,43 @@ public class PuntosInteres implements Serializable {
 	public void setLongitud(double longitud) {
 		this.longitud = longitud;
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public List<EventosPuntoInteres> getListaEventosPuntosInt() {
+		return listaEventosPuntosInt;
+	}
+
+	public void setListaEventosPuntosInt(List<EventosPuntoInteres> listaEventosPuntosInt) {
+		this.listaEventosPuntosInt = listaEventosPuntosInt;
+	}
+
+	public List<Usuariopuntosinteres> getListaUsuarioPuntosInt() {
+		return listaUsuarioPuntosInt;
+	}
+
+	public void setListaUsuarioPuntosInt(List<Usuariopuntosinteres> listaUsuarioPuntosInt) {
+		this.listaUsuarioPuntosInt = listaUsuarioPuntosInt;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
 
 }
