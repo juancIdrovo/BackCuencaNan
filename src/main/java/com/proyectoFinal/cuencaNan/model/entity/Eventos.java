@@ -18,7 +18,7 @@ import jakarta.persistence.TemporalType;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "eventos", uniqueConstraints = { @UniqueConstraint(columnNames = { "id_tipoEvento" }) })
+@Table(name = "eventos")
 public class Eventos implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -26,7 +26,6 @@ public class Eventos implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_evento;
 
-	@Column(nullable = false, unique = true)
 	private Long id_tipoEvento;
 	private Long id_Administrador;
 	private String nombre;
@@ -38,7 +37,7 @@ public class Eventos implements Serializable {
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idEventoFk")
 	private List<EventosPuntoInteres> listaEventosPuntosInt;
-	
+
 	public Long getId_evento() {
 		return id_evento;
 	}

@@ -17,46 +17,50 @@ import org.springframework.web.bind.annotation.RestController;
 import com.proyectoFinal.cuencaNan.model.entity.Eventos;
 import com.proyectoFinal.cuencaNan.model.service.IEventosService;
 
-@CrossOrigin(origins= {"http://localhost:4200"})
+@CrossOrigin(origins = { "http://localhost:4200" })
 @RestController
 @RequestMapping("/api")
 public class EventosRestController {
 
 	@Autowired
 	private IEventosService eventoService;
-	
-	// listar_todas_los_eventos
-		@GetMapping("/eventos")
-		public List<Eventos> indext() {
-			return eventoService.findAll();
-		}
-		
-		// buscar_un evento_por_id
-		@GetMapping("/eventos/{id_evento}")
-		public Eventos show(@PathVariable Long id) {
-			return eventoService.findById(id);
-		}	
-		
-		// guardar_un_evento
-		@PostMapping("/eventos")
-		@ResponseStatus(HttpStatus.CREATED)
-		public Eventos create(@RequestBody Eventos eventos) {
-			return eventoService.save(eventos);
-		}
-		
-		// editar_un_evento
-		@PutMapping("/eventos/{id_evento}")
-		@ResponseStatus(HttpStatus.CREATED)
-		public Eventos update(@RequestBody Eventos eventos, @PathVariable Long id) {
-			Eventos eventoA = eventoService.findById(id);
-			return eventoService.save(eventoA);
-		}
 
-		// eliminar_un_evento
-		@DeleteMapping("/eventos/{id_evento}")
-		@ResponseStatus(HttpStatus.NO_CONTENT)
-		public void delete(@PathVariable Long id) {
-			eventoService.delete(id);
-		}
-				
+	// listar_todas_los_eventos
+	@GetMapping("/eventos")
+	public List<Eventos> indext() {
+		return eventoService.findAll();
+	}
+
+	// buscar_un evento_por_id
+	@GetMapping("/eventos/{id_evento}")
+	public Eventos show(@PathVariable Long id_evento) {
+		return eventoService.findById(id_evento);
+	}
+
+	// guardar_un_evento
+	@PostMapping("/eventos")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Eventos create(@RequestBody Eventos eventos) {
+		return eventoService.save(eventos);
+	}
+
+	// editar_un_evento
+	@PutMapping("/eventos/{id_evento}")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Eventos update(@RequestBody Eventos eventos, @PathVariable Long id_evento) {
+		Eventos eventoA = eventoService.findById(id_evento);
+		eventoA.setFecha_Fin(eventos.getFecha_Fin());
+		eventoA.setFecha_Inicio(eventos.getFecha_Inicio());
+		eventoA.setNombre(eventos.getNombre());
+		
+		return eventoService.save(eventoA);
+	}
+
+	// eliminar_un_evento
+	@DeleteMapping("/eventos/{id_evento}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void delete(@PathVariable Long id_evento) {
+		eventoService.delete(id_evento);
+	}
+
 }
