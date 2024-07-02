@@ -1,4 +1,4 @@
-INSERT INTO usuarios (fecha_nacimiento, id_usuario, apellidos, cedula, celular, contrasena, direccion, foto_path, genero, intereses, mail, nombre_usuario, nombres) VALUES ('1992-04-24 00:00:00', 1, 'Idrovo', '0104455647', '0984359326', '1234', 'Av Loja', 'foto1.jpg', 'Masculino', 'Deportes, Música', 'juancidrovo@gmail.com', 'juanc .i.', 'Juan');
+INSERT INTO usuarios (fecha_nacimiento, id_usuario, apellidos, cedula, celular, contrasena, direccion, foto_path, genero, intereses, mail, nombre_usuario, nombres) VALUES ('1992-04-24 00:00:00', 1, 'Idrovo', '0104455647', '0984359326', '1234', 'Av Loja', 'https://practicasjohnsiguenza.s3.amazonaws.com/956f7930-8a14-4d27-b9bb-84e7edc356b7.jpg', 'Masculino', 'Deportes, Música', 'juancidrovo@gmail.com', 'juanc .i.', 'Juan');
 INSERT INTO usuarios (fecha_nacimiento, id_usuario, apellidos, cedula, celular, contrasena, direccion, foto_path, genero, intereses, mail, nombre_usuario, nombres) VALUES ('1985-05-20 00:00:00', 2, 'Perez', '0202020202', '0888888888', 'password456', 'Avenida Siempre Viva 742', 'foto2.jpg', 'Femenino', 'Lectura, Viajes', 'email2@example.com', 'usuario2', 'Maria');
 INSERT INTO usuarios (fecha_nacimiento, id_usuario, apellidos, cedula, celular, contrasena, direccion, foto_path, genero, intereses, mail, nombre_usuario, nombres) VALUES ('1992-09-15 00:00:00', 3, 'Lopez', '0303030303', '0777777777', 'password789', 'Calle 8', 'foto3.jpg', 'Masculino', 'Cine, Música', 'email3@example.com', 'usuario3', 'Carlos');
 INSERT INTO usuarios (fecha_nacimiento, id_usuario, apellidos, cedula, celular, contrasena, direccion, foto_path, genero, intereses, mail, nombre_usuario, nombres) VALUES ('1980-12-01 00:00:00', 4, 'Martinez', '0404040404', '0666666666', 'password012', 'Carrera 7', 'foto4.jpg', 'Femenino', 'Deportes, Cocina', 'email4@example.com', 'usuario4', 'Laura');
@@ -37,6 +37,9 @@ INSERT INTO foto (fotoid, foto) VALUES (2, 'https://practicasjohnsiguenza.s3.ama
 INSERT INTO foto (fotoid, foto) VALUES (3, 'foto3.jpg');
 INSERT INTO foto (fotoid, foto) VALUES (4, 'foto4.jpg');
 INSERT INTO foto (fotoid, foto) VALUES (5, 'foto5.jpg');
+INSERT INTO foto (fotoid, foto) VALUES (6, 'https://practicasjohnsiguenza.s3.amazonaws.com/956f7930-8a14-4d27-b9bb-84e7edc356b7.jpg');
+
+
 
 
 INSERT INTO administradores (id_administrador, apellidos, cedula, celular, contrasenia, email, nombre_usuario, nombres) VALUES (1, 'Lupercio', '0606060606', '0987456325', 'esteban45', 'esteban@gmail.com', 'esteban12', 'Esteban');
