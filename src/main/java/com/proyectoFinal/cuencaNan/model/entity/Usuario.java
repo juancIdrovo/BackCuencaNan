@@ -30,7 +30,6 @@ public class Usuario implements Serializable {
 	private String apellidos;
 	private String mail;
 	private String direccion;
-	private String genero;
 	private Date fecha_nacimiento;
 	private String nombre_usuario;
 	private String contrasena;
@@ -41,7 +40,6 @@ public class Usuario implements Serializable {
 	
 	private String fotoPath;
 
-	private String intereses;
 
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "idUsuario")
@@ -69,14 +67,6 @@ public class Usuario implements Serializable {
 
 	public void setCedula(String cedula) {
 		this.cedula = cedula;
-	}
-
-	public String getIntereses() {
-		return intereses;
-	}
-
-	public void setIntereses(String intereses) {
-		this.intereses = intereses;
 	}
 
 	public Long getId_usuario() {
@@ -117,14 +107,6 @@ public class Usuario implements Serializable {
 
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
-	}
-
-	public String getGenero() {
-		return genero;
-	}
-
-	public void setGenero(String genero) {
-		this.genero = genero;
 	}
 
 	public Date getFecha_nacimiento() {
