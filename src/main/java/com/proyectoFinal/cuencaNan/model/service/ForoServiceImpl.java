@@ -14,7 +14,7 @@ public class ForoServiceImpl implements IForoService{
 
 	@Autowired
 	private IForoDao foroDao;
-	
+
 	@Override
 	@Transactional(readOnly = true)
 	public List<Foro> findAll() {

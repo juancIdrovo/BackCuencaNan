@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.proyectoFinal.cuencaNan.model.entity.Administrador;
 import com.proyectoFinal.cuencaNan.model.entity.TiposEventos;
 import com.proyectoFinal.cuencaNan.model.service.ITipoEventosService;
 
@@ -26,7 +25,7 @@ public class TipoEventosRestController {
 
 	@Autowired
 	private ITipoEventosService tipoeventoService;
-	
+
 	// listar_todas_los_tiposEventos
 		@GetMapping("/tipo_eventos")
 		public List<TiposEventos> indext() {
@@ -38,14 +37,14 @@ public class TipoEventosRestController {
 		public TiposEventos show(@PathVariable Long id_tipoEvento) {
 			return tipoeventoService.findById(id_tipoEvento);
 		}
-		
+
 		// guardar_un_tipoEvento
 		@PostMapping("/tipo_eventos")
 		@ResponseStatus(HttpStatus.CREATED)
 		public TiposEventos create(@RequestBody TiposEventos tipoevento) {
 			return tipoeventoService.save(tipoevento);
 		}
-		
+
 		// editar_un_tipoEvento
 		@PutMapping("/tipo_eventos/{id_tipoEvento}")
 		@ResponseStatus(HttpStatus.CREATED)
@@ -60,5 +59,5 @@ public class TipoEventosRestController {
 		public void delete(@PathVariable Long id_tipoEvento) {
 			tipoeventoService.delete(id_tipoEvento);
 		}
-		
+
 }

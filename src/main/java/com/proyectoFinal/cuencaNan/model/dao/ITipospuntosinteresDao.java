@@ -10,7 +10,7 @@ import com.proyectoFinal.cuencaNan.model.entity.Tipospuntosinteres;
 
 
 public interface ITipospuntosinteresDao extends CrudRepository<Tipospuntosinteres,Long> {
-	
+
 	// Buscar por nombre
     List<Tipospuntosinteres> findByNombreContaining(String nombre);
 

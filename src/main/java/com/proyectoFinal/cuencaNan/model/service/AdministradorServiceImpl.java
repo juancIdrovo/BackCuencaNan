@@ -9,9 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.proyectoFinal.cuencaNan.model.dao.IAdministradorDao;
 import com.proyectoFinal.cuencaNan.model.entity.Administrador;
 
-@Service 
+@Service
 public class AdministradorServiceImpl implements IAdministradorService {
-    
+
     @Autowired
     private IAdministradorDao administradorDao;
 

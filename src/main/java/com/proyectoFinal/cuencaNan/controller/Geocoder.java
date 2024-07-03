@@ -12,14 +12,14 @@ import com.proyectoFinal.cuencaNan.model.Response;
 
 @RestController
 public class Geocoder {
-	
+
 	private static final Object API_KEY = "AIzaSyDrXMvnZizl4M8hj63WAzTGSfjIx44cnII";
 
 	@GetMapping("/test")
 	public String test () {
 		return "service up";
 	}
-	
+
 	@GetMapping("/getLocation")
 	public Response getGeoDetails(@RequestParam String address) {
 		UriComponents uri = UriComponentsBuilder.newInstance()

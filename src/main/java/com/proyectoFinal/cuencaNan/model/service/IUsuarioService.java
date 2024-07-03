@@ -13,7 +13,7 @@ public interface IUsuarioService {
     public Usuario findById(Long id);
 
     public void delete(Long id);
-    
+
     public Usuario authenticate(String mail, String contrasena);
 
     List<Usuario> findByNombre(String nombres);

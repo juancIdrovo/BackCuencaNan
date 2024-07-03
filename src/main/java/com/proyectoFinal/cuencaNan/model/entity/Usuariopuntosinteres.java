@@ -21,7 +21,7 @@ public class Usuariopuntosinteres implements Serializable {
 	private Long idpuntosinteres;
 	private int calificacion;
 	private String comentarios;
-	
+
 	public Long getIdusuariopuntosinteres() {
 		return idusuariopuntosinteres;
 	}
@@ -52,6 +52,6 @@ public class Usuariopuntosinteres implements Serializable {
 	public void setComentarios(String comentarios) {
 		this.comentarios = comentarios;
 	}
-	
-	
+
+
 }

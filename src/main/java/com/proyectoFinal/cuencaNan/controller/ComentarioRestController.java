@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.proyectoFinal.cuencaNan.model.entity.Comentario;
-
 import com.proyectoFinal.cuencaNan.model.service.IComentarioService;
 
 @CrossOrigin(origins= {"http://localhost:4200"})

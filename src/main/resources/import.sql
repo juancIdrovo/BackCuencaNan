@@ -32,12 +32,12 @@ INSERT INTO tipospuntosinteres (idtipospuntosinteres, descripcion, nombre, categ
 INSERT INTO tipospuntosinteres (idtipospuntosinteres, descripcion, nombre, categoria) VALUES (5, 'Puntos estrategicos para observar la ciudad', 'Miradores', 'Miradores');
 
 
-INSERT INTO foto (fotoid, foto) VALUES (1, 'https://practicasjohnsiguenza.s3.amazonaws.com/8fa81ac4-f1a6-4d8a-b5a1-4c5241b7a80e.jpg');
-INSERT INTO foto (fotoid, foto) VALUES (2, 'https://practicasjohnsiguenza.s3.amazonaws.com/688e8f1b-6b36-4f0e-933d-be2e298eadc6.jpg');
+INSERT INTO foto (fotoid, foto) VALUES (1, 'https://practicasjohnsiguenza.s3.us-east-2.amazonaws.com/parqueCalderon.jpg');
+INSERT INTO foto (fotoid, foto) VALUES (2, 'foto3.jpg');
 INSERT INTO foto (fotoid, foto) VALUES (3, 'foto3.jpg');
 INSERT INTO foto (fotoid, foto) VALUES (4, 'foto4.jpg');
 INSERT INTO foto (fotoid, foto) VALUES (5, 'foto5.jpg');
-INSERT INTO foto (fotoid, foto) VALUES (6, 'https://practicasjohnsiguenza.s3.amazonaws.com/956f7930-8a14-4d27-b9bb-84e7edc356b7.jpg');
+INSERT INTO foto (fotoid, foto) VALUES (6, 'https://practicasjohnsiguenza.s3.us-east-2.amazonaws.com/paqDragon.jpg');
 
 
 
@@ -66,7 +66,7 @@ INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, 
 INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre, descripcion) VALUES (3, 3, 3, 5, -2.9226683, -79.011736, 'El Columpio De Turi', 'Lugar turístico donde te puedes columpiar y ver la ciudad de Cuenca, Ecuador');
 INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre, descripcion) VALUES (4, 4, 4, 4, -2.90355, -79.00753, 'Iglesia del Sagrario', 'Esta iglesia se encuentra frente al parque central, mantiene el estilo barroco renacentista, siendo la estructura arquitectónica más antigua de la ciudad de Cuenca');
 INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre, descripcion) VALUES (5, 5, 5, 3, -2.7798513, -79.22467259999999, 'Laguna Toreadora', 'La Laguna Toreadora es una laguna ubicada en el Parque Nacional Cajas, a una altitud de aproximadamente 4.000 metros sobre el nivel del mar.');
-INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre, descripcion) VALUES (6, 1, 2, 1, -2.9028129, -79.03096939999999, 'Parque del Dragon Cuenca, Ecuador', 'Parque, con un dragón metálico que vota fugo por su boca!');
+INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre, descripcion) VALUES (6, 1, 6, 1, -2.9028129, -79.03096939999999, 'Parque del Dragon Cuenca, Ecuador', 'Parque, con un dragón metálico que vota fugo por su boca!');
 
 INSERT INTO eventospuntointeres (id, id_evento_fk, id_puntoifk) VALUES (1, 1, 1);
 INSERT INTO eventospuntointeres (id, id_evento_fk, id_puntoifk) VALUES (2, 2, 2);

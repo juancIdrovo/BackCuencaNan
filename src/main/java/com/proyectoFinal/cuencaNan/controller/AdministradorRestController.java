@@ -22,8 +22,8 @@ import com.proyectoFinal.cuencaNan.model.service.IAdministradorService;
 @RestController
 @RequestMapping("/api")
 public class AdministradorRestController {
-	
-	
+
+
 	@Autowired
 	private IAdministradorService administradorservice;
 

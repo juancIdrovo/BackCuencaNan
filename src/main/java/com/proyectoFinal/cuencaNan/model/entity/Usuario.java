@@ -34,10 +34,10 @@ public class Usuario implements Serializable {
 	private String nombre_usuario;
 	private String contrasena;
 	private String celular;
-	
+
 	@Transient
 	private String fotoUrl;
-	
+
 	private String fotoPath;
 
 

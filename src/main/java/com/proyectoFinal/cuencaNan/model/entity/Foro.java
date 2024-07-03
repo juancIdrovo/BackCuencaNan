@@ -20,18 +20,18 @@ public class Foro {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idForo;
-	
+
 	private Long idUsuario;
 	private String respuesta;
-	
+
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idForo")
 	private List<Comentario> listaComentarios;
-	
+
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idForo")
 	private List<ForoUsuario> listaForoUsuario;
-	
+
 
 	public Foro() {
 		super();

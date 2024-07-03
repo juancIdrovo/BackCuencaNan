@@ -9,11 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.proyectoFinal.cuencaNan.model.dao.IForoUsuarioDao;
 import com.proyectoFinal.cuencaNan.model.entity.ForoUsuario;
 
-@Service 
+@Service
 public class ForoUsuarioServiceImpl implements IForoUsuarioService{
-	
+
 	@Autowired
-	
+
 	private IForoUsuarioDao foroUsuarioDao;
 
 	@Override
@@ -39,5 +39,5 @@ public class ForoUsuarioServiceImpl implements IForoUsuarioService{
 	public void delete(Long id) {
 		foroUsuarioDao.deleteById(id);
 	}
-	
+
 }

@@ -24,7 +24,7 @@ public class Tipospuntosinteres implements Serializable {
 	private String nombre;
 	private String descripcion;
 	private String categoria;
-	
+
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idTipoPuntoInteres")
 	private List<PuntosInteres> listaPuntosInteres;
@@ -72,5 +72,5 @@ public class Tipospuntosinteres implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
+
 }

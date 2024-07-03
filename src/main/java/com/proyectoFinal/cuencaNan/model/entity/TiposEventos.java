@@ -22,7 +22,7 @@ public class TiposEventos implements Serializable{
 	private Long id_tipoEvento;
 	private String nombre_tipoEvento;
 	private String descripcion;
-	
+
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_tipoEvento")
 	private List<Eventos> eventos;
@@ -50,5 +50,5 @@ public class TiposEventos implements Serializable{
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-		
+
 }

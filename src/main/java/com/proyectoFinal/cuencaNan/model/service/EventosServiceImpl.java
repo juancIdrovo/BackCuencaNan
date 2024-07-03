@@ -14,7 +14,7 @@ public class EventosServiceImpl implements IEventosService{
 
 	@Autowired
     private IEventosDao eventoDao;
-	
+
 	@Override
 	public List<Eventos> findAll() {
 		return (List<Eventos>)eventoDao.findAll();
@@ -37,5 +37,5 @@ public class EventosServiceImpl implements IEventosService{
 		eventoDao.deleteById(id_evento);
 	}
 
-	
+
 }
