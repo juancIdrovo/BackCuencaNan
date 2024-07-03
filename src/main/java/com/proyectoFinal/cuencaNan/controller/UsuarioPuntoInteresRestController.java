@@ -30,18 +30,18 @@ public class UsuarioPuntoInteresRestController {
 		return usuarioservice.findAll();
 
 	}
-	
+
     @GetMapping("/usuariopuntosinteres/{idusuariopuntosinteres}")
     public Usuariopuntosinteres show(@PathVariable Long idusuariopuntosinteres) {
     	return usuarioservice.findById(idusuariopuntosinteres);
     }
-    
+
     @PostMapping("/usuariopuntosinteres")
     @ResponseStatus(HttpStatus.CREATED)
     public Usuariopuntosinteres create(@RequestBody Usuariopuntosinteres idusuariopuntosinteres) {
     	return usuarioservice.save(idusuariopuntosinteres);
     }
-    
+
     @PutMapping("/usuariopuntosinteres/{idusuariopuntosinteres}")
     @ResponseStatus(HttpStatus.CREATED)
     public Usuariopuntosinteres update(@RequestBody Usuariopuntosinteres usuariopuntointeres, @PathVariable Long idusuariopuntosinteres) {
@@ -50,12 +50,12 @@ public class UsuarioPuntoInteresRestController {
     	usupuntoactual.setCalificacion(usuariopuntointeres.getCalificacion());
     	return usuarioservice.save(usupuntoactual);
     }
-    
+
     @DeleteMapping("/usuariopuntosinteres/{idusuariopuntosinteres}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long idusuariopuntosinteres) {
     	usuarioservice.delete(idusuariopuntosinteres);
     }
-    
-    
+
+
 }

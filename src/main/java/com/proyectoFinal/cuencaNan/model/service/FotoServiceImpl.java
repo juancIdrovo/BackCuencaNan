@@ -12,7 +12,7 @@ import com.proyectoFinal.cuencaNan.model.entity.Foto;
 @Service
 public class FotoServiceImpl implements IFotoService{
 
-	
+
 	@Autowired
 	private IFotoDao fotodao;
 
@@ -41,7 +41,7 @@ public class FotoServiceImpl implements IFotoService{
 	public void delete(Long fotoid) {
 		// TODO Auto-generated method stub
 		fotodao.deleteById(fotoid);
-		
+
 	}
 
 

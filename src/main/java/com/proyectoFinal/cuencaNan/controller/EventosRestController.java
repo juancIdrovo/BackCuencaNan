@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.proyectoFinal.cuencaNan.model.entity.Eventos;
 import com.proyectoFinal.cuencaNan.model.service.IEventosService;
 
@@ -52,7 +53,7 @@ public class EventosRestController {
 		eventoA.setFecha_Fin(eventos.getFecha_Fin());
 		eventoA.setFecha_Inicio(eventos.getFecha_Inicio());
 		eventoA.setNombre(eventos.getNombre());
-		
+
 		return eventoService.save(eventoA);
 	}
 

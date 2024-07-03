@@ -17,8 +17,8 @@ public class Foto implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long fotoid;
 	private String foto;
-	
-	
+
+
 	public Long getFotoid() {
 		return fotoid;
 	}
@@ -31,6 +31,6 @@ public class Foto implements Serializable {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
-	
-	
+
+
 }

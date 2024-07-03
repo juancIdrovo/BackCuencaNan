@@ -13,7 +13,7 @@ public class TipoEventosServiceImpl implements ITipoEventosService{
 
 	@Autowired
     private ITipoEventosDao tipoEventoDao;
-	
+
 	@Override
 	public List<TiposEventos> findAll() {
 		// TODO Auto-generated method stub

@@ -63,11 +63,11 @@ public class PuntosInteresRestController {
 	public void delete(@PathVariable Long id) {
 		interesService.delete(id);
 	}
-	
+
 	@GetMapping("/puntosinteres/nombre/{nombre}")
     public List<PuntosInteres> findByNombre(@PathVariable String nombre) {
         return interesService.findByNombre(nombre);
     }
-	
-	
+
+
 }

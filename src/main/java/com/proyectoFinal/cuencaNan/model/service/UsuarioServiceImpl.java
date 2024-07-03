@@ -7,10 +7,11 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.proyectoFinal.cuencaNan.model.dao.IUsuarioDao;
 import com.proyectoFinal.cuencaNan.model.entity.Usuario;
 
-@Service 
+@Service
 public class UsuarioServiceImpl implements IUsuarioService {
 
     @Autowired
@@ -39,7 +40,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
     public void delete(Long id) {
         usuarioDao.deleteById(id);
     }
-    
+
     @Override
     public List<Usuario> findByNombre(String nombres) {
         return usuarioDao.findByNombresContainingIgnoreCase(nombres);

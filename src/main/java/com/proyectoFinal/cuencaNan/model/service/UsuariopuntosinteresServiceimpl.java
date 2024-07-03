@@ -12,7 +12,7 @@ import com.proyectoFinal.cuencaNan.model.entity.Usuariopuntosinteres;
 @Service
 public class UsuariopuntosinteresServiceimpl implements IUsuariopuntosinteresService{
 
-	
+
 	@Autowired
 	private IUsuariopuntosinteresDao Usuariopuntos;
 
@@ -41,7 +41,7 @@ public class UsuariopuntosinteresServiceimpl implements IUsuariopuntosinteresSer
 	public void delete(Long idusuariopuntosinteres) {
 		// TODO Auto-generated method stub
 		Usuariopuntos.deleteById(idusuariopuntosinteres);
-		
+
 	}
 
 

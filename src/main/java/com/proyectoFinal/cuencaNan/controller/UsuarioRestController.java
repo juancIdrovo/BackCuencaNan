@@ -1,4 +1,4 @@
-package com.proyectoFinal.cuencaNan.controller;
+	package com.proyectoFinal.cuencaNan.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -46,6 +46,7 @@ public class UsuarioRestController {
 	@GetMapping("/usuarios/{id_usuario}")
 	public Usuario show(@PathVariable Long id_usuario) {
 		return usuarioservice.findById(id_usuario);
+
 	}
 
 	// guardar_un_usuario

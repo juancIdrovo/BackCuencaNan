@@ -31,18 +31,18 @@ public class FotoRestController {
 		return fotoservice.findAll();
 
 	}
-	
+
     @GetMapping("/foto/{fotoid}")
     public Foto show(@PathVariable Long fotoid) {
     	return fotoservice.findById(fotoid);
     }
-    
+
     @PostMapping("/foto")
     @ResponseStatus(HttpStatus.CREATED)
     public Foto create(@RequestBody Foto fotoid) {
     	return fotoservice.save(fotoid);
     }
-    
+
     @PutMapping("/foto/{fotoid}")
     @ResponseStatus(HttpStatus.CREATED)
     public Foto update(@RequestBody Foto foto, @PathVariable Long fotoid) {
@@ -50,12 +50,12 @@ public class FotoRestController {
     	fotoactual.setFoto(foto.getFoto());
     	return fotoservice.save(fotoactual);
     }
-    
+
     @DeleteMapping("/foto/{fotoid}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long fotoid) {
     	fotoservice.delete(fotoid);
     }
-    
-    
+
+
 }

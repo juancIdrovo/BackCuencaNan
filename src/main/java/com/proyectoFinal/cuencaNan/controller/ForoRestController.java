@@ -21,40 +21,40 @@ import com.proyectoFinal.cuencaNan.model.service.IForoService;
 @RestController
 @RequestMapping("/api")
 public class ForoRestController {
-	
-	@Autowired 
+
+	@Autowired
 	private IForoService foroService;
-	
+
 	@GetMapping("/foros")
 	public List <Foro> indext(){
-		
-		return foroService.findAll();	
+
+		return foroService.findAll();
 	}
-	
+
 	@GetMapping("/foros/{idForo}")
 	public Foro show(@PathVariable Long idForo) {
 		return foroService.findById(idForo);
 	}
-	
+
 	@PostMapping("/foros")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Foro update(@RequestBody Foro foro) {
 		return foroService.save(foro);
 	}
-	
+
 	@PutMapping("/foros/{idForo}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Foro update(@RequestBody Foro foro, @PathVariable Long idForo) {
-		
+
 		Foro foroA = foroService.findById(idForo);
-		
+
 		foroA.setRespuesta(foro.getRespuesta());
-		
+
 		return foroService.save(foroA);
-		
+
 	}
-	
-	
-	
+
+
+
 
 }

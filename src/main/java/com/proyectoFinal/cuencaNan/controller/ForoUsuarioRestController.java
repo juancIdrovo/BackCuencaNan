@@ -22,7 +22,7 @@ import com.proyectoFinal.cuencaNan.model.service.IForoUsuarioService;
 @RestController
 @RequestMapping("/api")
 public class ForoUsuarioRestController {
-	
+
 	@Autowired
 	private IForoUsuarioService foroUsuarioservice;
 

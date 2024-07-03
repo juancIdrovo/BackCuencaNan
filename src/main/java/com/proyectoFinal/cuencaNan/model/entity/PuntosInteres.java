@@ -17,7 +17,7 @@ import jakarta.persistence.Table;
 public class PuntosInteres implements Serializable {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -34,11 +34,11 @@ public class PuntosInteres implements Serializable {
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idPuntoIFk")
 	private List<EventosPuntoInteres> listaEventosPuntosInt;
-	
+
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idpuntosinteres")
 	private List<Usuariopuntosinteres> listaUsuarioPuntosInt;
-	
+
 	public Long getIdPuntoInteres() {
 		return id;
 	}
@@ -130,7 +130,7 @@ public class PuntosInteres implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
+
+
 
 }

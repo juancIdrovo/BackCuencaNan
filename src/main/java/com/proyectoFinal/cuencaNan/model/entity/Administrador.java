@@ -33,11 +33,11 @@ public class Administrador implements Serializable {
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_Administrador")
 	private List<Eventos> listaEventos;
-	
+
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idAdministrador")
 	private List<PuntosInteres> listaPuntosInteres;
-	
+
 	public Long getIdAdministrador() {
 		return idAdministrador;
 	}

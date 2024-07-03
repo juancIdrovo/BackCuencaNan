@@ -42,7 +42,7 @@ public class TipospuntosinteresServiceimpl implements ITipospuntosinteresService
 		Tipospuntosinteres.deleteById(idtipospuntosinteres);
 
 	}
-	
+
 
     @Override
     @Transactional(readOnly = true)
