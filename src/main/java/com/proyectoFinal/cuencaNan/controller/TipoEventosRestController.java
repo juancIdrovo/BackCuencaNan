@@ -56,8 +56,8 @@ public class TipoEventosRestController {
 		// eliminar_un_tipoEvento
 		@DeleteMapping("/tipo_eventos/{id_tipoEvento}")
 		@ResponseStatus(HttpStatus.NO_CONTENT)
-		public void delete(@PathVariable Long id) {
-			tipoeventoService.delete(id);
+		public void delete(@PathVariable Long id_tipoEvento) {
+			tipoeventoService.delete(id_tipoEvento);
 		}
 
 }
