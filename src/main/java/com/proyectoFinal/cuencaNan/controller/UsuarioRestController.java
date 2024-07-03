@@ -42,13 +42,13 @@ public class UsuarioRestController {
 		}).collect(Collectors.toList());
 	}
 
-	// buscar_un usuario_por_id
 	@GetMapping("/usuarios/{id_usuario}")
 	public Usuario show(@PathVariable Long id_usuario) {
-		return usuarioservice.findById(id_usuario);
-
+	    Usuario usuario = usuarioservice.findById(id_usuario);
+	    usuario.setFotoUrl(s3Service.getObjectUrl(usuario.getFotoPath()));
+	    return usuario;
 	}
-
+	
 	// guardar_un_usuario
 	@PostMapping("/usuarios")
 	@ResponseStatus(HttpStatus.CREATED)
@@ -87,6 +87,9 @@ public class UsuarioRestController {
 
 		if (usu != null) {
 			System.out.println("Inicio de sesión exitoso para el mail: " + mail);
+			  
+			String fotoUrl = s3Service.getObjectUrl(usu.getFotoPath());
+		        usu.setFotoUrl(fotoUrl);
 
 			// Asegúrate de que sea un usuario
 			if (usu instanceof Usuario) {

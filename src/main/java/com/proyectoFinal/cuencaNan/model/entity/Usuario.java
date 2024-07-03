@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -17,6 +19,7 @@ import jakarta.persistence.Transient;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
+
 @Table(name = "usuarios", uniqueConstraints = { @UniqueConstraint(columnNames = { "cedula" }) })
 
 public class Usuario implements Serializable {
@@ -36,6 +39,7 @@ public class Usuario implements Serializable {
 	private String celular;
 
 	@Transient
+    @JsonProperty
 	private String fotoUrl;
 
 	private String fotoPath;
