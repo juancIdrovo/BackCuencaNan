@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -56,6 +57,15 @@ public class UsuarioPuntoInteresRestController {
     public void delete(@PathVariable Long idusuariopuntosinteres) {
     	usuarioservice.delete(idusuariopuntosinteres);
     }
-
+    
+    @GetMapping("/puntosinteres/{id}/media-calificaciones")
+    public Double getMediaCalificaciones(@PathVariable Long id) {
+        return usuarioservice.findAverageCalificacionByPuntoInteres(id);
+    }
+    
+    @GetMapping("/usuariopuntosinteres/{idusuario}/{idpuntosinteres}")
+    public Usuariopuntosinteres getByUserAndPuntoInteres(@PathVariable Long idusuario, @PathVariable Long idpuntosinteres) {
+        return usuarioservice.findByUserAndPuntoInteres(idusuario, idpuntosinteres);
+    }
 
 }

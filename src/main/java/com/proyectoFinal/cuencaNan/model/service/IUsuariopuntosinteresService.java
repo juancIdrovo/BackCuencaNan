@@ -4,14 +4,17 @@ import java.util.List;
 
 import com.proyectoFinal.cuencaNan.model.entity.Usuariopuntosinteres;
 
-public interface IUsuariopuntosinteresService  {
+public interface IUsuariopuntosinteresService {
 
-	public List<Usuariopuntosinteres> findAll();
+    List<Usuariopuntosinteres> findAll();
 
-	public Usuariopuntosinteres save(Usuariopuntosinteres idusuariopuntosinteres);
+    Usuariopuntosinteres save(Usuariopuntosinteres idusuariopuntosinteres);
 
-	public Usuariopuntosinteres findById(Long idusuariopuntosinteres);
+    Usuariopuntosinteres findById(Long idusuariopuntosinteres);
 
-	public void delete (Long idusuariopuntosinteres);
+    void delete(Long idusuariopuntosinteres);
 
+    Double findAverageCalificacionByPuntoInteres(Long idpuntosinteres);
+
+    Usuariopuntosinteres findByUserAndPuntoInteres(Long idusuario, Long idpuntosinteres); // Nuevo método
 }

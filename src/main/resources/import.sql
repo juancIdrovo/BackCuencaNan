@@ -76,7 +76,7 @@ INSERT INTO eventospuntointeres (id, id_evento_fk, id_puntoifk) VALUES (5, 5, 5)
 
 
 INSERT INTO usuariopuntosinteres (idusuariopuntosinteres, calificacion, comentarios, idpuntosinteres, idusuario) VALUES (1, 5, 'Excelente lugar para visitar 1.', 1, 1);
-INSERT INTO usuariopuntosinteres (idusuariopuntosinteres, calificacion, comentarios, idpuntosinteres, idusuario) VALUES (2, 4, 'Muy buen lugar 2.', 2, 2);
-INSERT INTO usuariopuntosinteres (idusuariopuntosinteres, calificacion, comentarios, idpuntosinteres, idusuario) VALUES (3, 3, 'Lugar regular 3.', 3, 3);
+INSERT INTO usuariopuntosinteres (idusuariopuntosinteres, calificacion, comentarios, idpuntosinteres, idusuario) VALUES (2, 4, 'Muy buen lugar 2.', 1, 2);
+INSERT INTO usuariopuntosinteres (idusuariopuntosinteres, calificacion, comentarios, idpuntosinteres, idusuario) VALUES (3, 3, 'Lugar regular 3.', 1, 3);
 INSERT INTO usuariopuntosinteres (idusuariopuntosinteres, calificacion, comentarios, idpuntosinteres, idusuario) VALUES (4, 2, 'No me gustó mucho 4.', 4, 4);
 INSERT INTO usuariopuntosinteres (idusuariopuntosinteres, calificacion, comentarios, idpuntosinteres, idusuario) VALUES (5, 1, 'No recomiendo visitar 5.', 5, 5);
