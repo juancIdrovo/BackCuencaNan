@@ -55,10 +55,11 @@ INSERT INTO tipo_eventos (id_tipo_evento, descripcion, nombre_tipo_evento) VALUE
 INSERT INTO tipo_eventos (id_tipo_evento, descripcion, nombre_tipo_evento) VALUES (5, 'Evento artístico relacionado con arte 5', 'Exposición 5');
 
 
-INSERT INTO eventos (id_evento, fecha_fin, fecha_inicio, id_administrador, id_tipo_evento, nombre) VALUES (1, '2023-12-31', '2023-01-01', 1, 1, 'Festival de Música 1');
-INSERT INTO eventos (id_evento, fecha_fin, fecha_inicio, id_administrador, id_tipo_evento, nombre) VALUES (2, '2023-12-30', '2023-01-02', 2, 2, 'Carrera 10K 2');
-INSERT INTO eventos (id_evento, fecha_fin, fecha_inicio, id_administrador, id_tipo_evento, nombre) VALUES (3, '2023-12-29', '2023-01-03', 3, 3, 'Congreso de Tecnología 3');
-INSERT INTO eventos (id_evento, fecha_fin, fecha_inicio, id_administrador, id_tipo_evento, nombre) VALUES (4, '2023-12-28', '2023-01-04', 4, 4, 'Feria de Comida 4');
+INSERT INTO eventos (id_evento, fecha_fin, fecha_inicio, id_administrador, id_tipo_evento, nombre, hora_inicio, hora_fin) VALUES (1, '2023-12-31', '2023-01-01', 1, 1, 'Festival de Música 1', '10:00:00', '22:00:00');
+INSERT INTO eventos (id_evento, fecha_fin, fecha_inicio, id_administrador, id_tipo_evento, nombre, hora_inicio, hora_fin) VALUES (2, '2023-12-30', '2023-01-02', 2, 2, 'Carrera 10K 2', '08:00:00', '12:00:00');
+INSERT INTO eventos (id_evento, fecha_fin, fecha_inicio, id_administrador, id_tipo_evento, nombre, hora_inicio, hora_fin) VALUES (3, '2023-12-29', '2023-01-03', 3, 3, 'Congreso de Tecnología 3', '09:00:00', '17:00:00');
+INSERT INTO eventos (id_evento, fecha_fin, fecha_inicio, id_administrador, id_tipo_evento, nombre, hora_inicio, hora_fin) VALUES (4, '2023-12-28', '2023-01-04', 4, 4, 'Feria de Comida 4', '11:00:00', '20:00:00');
+
 
 
 INSERT INTO puntointeres (id, id_administrador, id_foto, id_tipo_punto_interes, latitud, longitud, nombre, descripcion) VALUES (1, 1, 1, 1, -2.8974172, -79.0044893, 'Parque Abdón Calderón', 'Oficialmente Parque Mayor Abdón Calderón​, antiguamente conocida también como Plaza República o Plaza de Armas.');
