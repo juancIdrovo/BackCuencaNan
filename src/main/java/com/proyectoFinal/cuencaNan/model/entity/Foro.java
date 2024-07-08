@@ -23,6 +23,8 @@ public class Foro {
 
 	private Long idUsuario;
 	private String respuesta;
+	private String titulo;
+	private Long idFoto;
 
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idForo")
@@ -37,12 +39,16 @@ public class Foro {
 		super();
 	}
 
-	public Foro(Long idForo, Long idUsuario, String respuesta) {
-		super();
-		this.idForo = idForo;
-		this.idUsuario = idUsuario;
-		this.respuesta = respuesta;
+
+	public String getTitulo() {
+		return titulo;
 	}
+
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
 
 	public Long getIdForo() {
 		return idForo;
@@ -67,5 +73,16 @@ public class Foro {
 	public void setRespuesta(String respuesta) {
 		this.respuesta = respuesta;
 	}
+
+
+	public Long getIdFoto() {
+		return idFoto;
+	}
+
+
+	public void setIdFoto(Long idFoto) {
+		this.idFoto = idFoto;
+	}
+
 
 }

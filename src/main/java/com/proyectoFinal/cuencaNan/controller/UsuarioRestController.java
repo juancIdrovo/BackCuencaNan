@@ -63,7 +63,13 @@ public class UsuarioRestController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public Usuario update(@RequestBody Usuario usuario, @PathVariable Long id_usuario) {
 		Usuario usuarioActual = usuarioservice.findById(id_usuario);
+		usuarioActual.setNombres(usuario.getNombres());
 		usuarioActual.setApellidos(usuario.getApellidos());
+		usuarioActual.setMail(usuario.getMail());
+		usuarioActual.setDireccion(usuario.getDireccion());
+		usuarioActual.setCelular(usuario.getCelular());
+		usuarioActual.setContrasena(usuario.getContrasena());
+		usuarioActual.setFecha_nacimiento(usuario.getFecha_nacimiento());
 		return usuarioservice.save(usuarioActual);
 	}
 
