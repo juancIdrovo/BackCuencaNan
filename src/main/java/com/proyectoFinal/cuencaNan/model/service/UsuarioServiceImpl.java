@@ -42,21 +42,25 @@ public class UsuarioServiceImpl implements IUsuarioService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Usuario> findByNombre(String nombres) {
         return usuarioDao.findByNombresContainingIgnoreCase(nombres);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Usuario> findByApellido(String apellidos) {
         return usuarioDao.findByApellidosContainingIgnoreCase(apellidos);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Usuario> findByMail(String mail) {
-        return Collections.singletonList(usuarioDao.findByMail(mail).orElse(null));
+        return usuarioDao.findByMail(mail).map(Collections::singletonList).orElse(Collections.emptyList());
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Usuario authenticate(String mail, String contrasena) {
         Optional<Usuario> personaOptional = usuarioDao.findByMail(mail);
 
@@ -71,5 +75,4 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
         return null; // Autenticación fallida
     }
-
 }

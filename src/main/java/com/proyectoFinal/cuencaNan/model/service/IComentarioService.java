@@ -13,5 +13,7 @@ public interface IComentarioService {
 	public Comentario findById(Long idComentario);
 
 	public void delete(Long idComentario);
+	
+	List<Comentario> findByForoId(Long foroId);
 
 }

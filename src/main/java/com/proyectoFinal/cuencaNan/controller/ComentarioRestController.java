@@ -18,47 +18,47 @@ import org.springframework.web.bind.annotation.RestController;
 import com.proyectoFinal.cuencaNan.model.entity.Comentario;
 import com.proyectoFinal.cuencaNan.model.service.IComentarioService;
 
-@CrossOrigin(origins= {"http://localhost:4200"})
+@CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
 @RequestMapping("/api")
 public class ComentarioRestController {
 
-	@Autowired
-	private IComentarioService comenServe;
+    @Autowired
+    private IComentarioService comentarioService;
 
-	// listar_todas_los_usuarios
-	@GetMapping("/comentarios")
-	public List<Comentario> indext() {
-		return comenServe.findAll();
-	}
+    @GetMapping("/comentarios")
+    public List<Comentario> listarComentarios() {
+        return comentarioService.findAll();
+    }
 
-	// buscar_un usuario_por_id
-	@GetMapping("/buscar/{idComentario}")
-	public Comentario show(@PathVariable Long idComentario) {
-		return comenServe.findById(idComentario);
-	}
+    @GetMapping("/comentarios/{idComentario}")
+    public Comentario obtenerComentario(@PathVariable Long idComentario) {
+        return comentarioService.findById(idComentario);
+    }
 
-	// guardar_un_usuario
-	@PostMapping("/guardar")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Comentario create(@RequestBody Comentario comentario) {
-		return comenServe.save(comentario);
-	}
+    @PostMapping("/comentarios")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Comentario crearComentario(@RequestBody Comentario comentario) {
+        return comentarioService.save(comentario);
+    }
 
-	// editar_un_usuario
-	@PutMapping("/editar/{idComentario}")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Comentario update(@RequestBody Comentario comentario, @PathVariable Long idComentario) {
-		Comentario comentarioActual = comenServe.findById(idComentario);
-		comentarioActual.setComentario(comentario.getComentario());
-		return comenServe.save(comentarioActual);
-	}
+    @PutMapping("/comentarios/{idComentario}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Comentario actualizarComentario(@RequestBody Comentario comentario, @PathVariable Long idComentario) {
+        Comentario comentarioActual = comentarioService.findById(idComentario);
+        comentarioActual.setComentario(comentario.getComentario());
+        // Actualiza otros campos si es necesario
+        return comentarioService.save(comentarioActual);
+    }
 
-	// eliminar_un_usuario
-	@DeleteMapping("/eliminar/{idComentario}")
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable Long idComentario) {
-		comenServe.delete(idComentario);
-	}
+    @DeleteMapping("/comentarios/{idComentario}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void eliminarComentario(@PathVariable Long idComentario) {
+        comentarioService.delete(idComentario);
+    }
 
+    @GetMapping("/comentarios/foro/{idForo}")
+    public List<Comentario> listarComentariosPorForo(@PathVariable Long idForo) {
+        return comentarioService.findByForoId(idForo);
+    }
 }

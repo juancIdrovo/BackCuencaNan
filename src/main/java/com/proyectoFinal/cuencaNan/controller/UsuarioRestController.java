@@ -1,4 +1,4 @@
-	package com.proyectoFinal.cuencaNan.controller;
+package com.proyectoFinal.cuencaNan.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -28,98 +28,91 @@ import com.proyectoFinal.cuencaNan.model.service.IUsuarioService;
 @RequestMapping("/api")
 public class UsuarioRestController {
 
-	@Autowired
-	private IUsuarioService usuarioservice;
+    @Autowired
+    private IUsuarioService usuarioService;
 
-	@Autowired
-	private S3Service s3Service;
+    @Autowired
+    private S3Service s3Service;
 
-	// listar_todas_los_usuarios
-	@GetMapping("/usuarios")
-	public List<Usuario> indext() {
-		return usuarioservice.findAll().stream().peek(usuario -> {
-			usuario.setFotoUrl(s3Service.getObjectUrl(usuario.getFotoPath()));
-		}).collect(Collectors.toList());
-	}
+    @GetMapping("/usuarios")
+    public List<Usuario> indext() {
+        return usuarioService.findAll().stream().peek(usuario -> {
+            usuario.setFotoUrl(s3Service.getObjectUrl(usuario.getFotoPath()));
+        }).collect(Collectors.toList());
+    }
 
-	@GetMapping("/usuarios/{id_usuario}")
-	public Usuario show(@PathVariable Long id_usuario) {
-	    Usuario usuario = usuarioservice.findById(id_usuario);
-	    usuario.setFotoUrl(s3Service.getObjectUrl(usuario.getFotoPath()));
-	    return usuario;
-	}
-	
-	// guardar_un_usuario
-	@PostMapping("/usuarios")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Usuario create(@RequestBody Usuario usuario) {
-		usuarioservice.save(usuario);
-		usuario.setFotoUrl(s3Service.getObjectUrl(usuario.getFotoPath()));
-		return usuario;
-	}
+    @GetMapping("/usuarios/{id_usuario}")
+    public Usuario show(@PathVariable Long id_usuario) {
+        Usuario usuario = usuarioService.findById(id_usuario);
+        usuario.setFotoUrl(s3Service.getObjectUrl(usuario.getFotoPath()));
+        return usuario;
+    }
+    
+    @PostMapping("/usuarios")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Usuario create(@RequestBody Usuario usuario) {
+        usuarioService.save(usuario);
+        usuario.setFotoUrl(s3Service.getObjectUrl(usuario.getFotoPath()));
+        return usuario;
+    }
 
-	// editar_un_usuario
-	@PutMapping("/usuarios/{id_usuario}")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Usuario update(@RequestBody Usuario usuario, @PathVariable Long id_usuario) {
-		Usuario usuarioActual = usuarioservice.findById(id_usuario);
-		usuarioActual.setApellidos(usuario.getApellidos());
-		return usuarioservice.save(usuarioActual);
-	}
+    @PutMapping("/usuarios/{id_usuario}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Usuario update(@RequestBody Usuario usuario, @PathVariable Long id_usuario) {
+        Usuario usuarioActual = usuarioService.findById(id_usuario);
+        usuarioActual.setApellidos(usuario.getApellidos());
+        // Puedes añadir más campos aquí para actualizar
+        return usuarioService.save(usuarioActual);
+    }
 
-	// eliminar_un_usuario
-	@DeleteMapping("/usuarios/{id_usuario}")
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable Long id) {
-		usuarioservice.delete(id);
-	}
+    @DeleteMapping("/usuarios/{id_usuario}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long id_usuario) {
+        usuarioService.delete(id_usuario);
+    }
 
-	// Login solo para usuario
+    @PostMapping("/usuarios/loginusuario")
+    public ResponseEntity<?> logginUsuario(@RequestBody Map<String, String> credentials) {
+        String mail = credentials.get("mail");
+        String contrasena = credentials.get("contrasena");
 
-	@PostMapping("/usuarios/loginusuario")
-	public ResponseEntity<?> logginUsuario(@RequestBody Map<String, String> credentials) {
-		String mail = credentials.get("mail");
-		String contrasena = credentials.get("contrasena");
+        System.out.println("Intento de inicio de sesión para el mail: " + mail);
 
-		System.out.println("Intento de inicio de sesión para el mail: " + mail);
+        Usuario usu = usuarioService.authenticate(mail, contrasena);
 
-		Usuario usu = usuarioservice.authenticate(mail, contrasena);
+        if (usu != null) {
+            System.out.println("Inicio de sesión exitoso para el mail: " + mail);
+              
+            String fotoUrl = s3Service.getObjectUrl(usu.getFotoPath());
+            usu.setFotoUrl(fotoUrl);
 
-		if (usu != null) {
-			System.out.println("Inicio de sesión exitoso para el mail: " + mail);
-			  
-			String fotoUrl = s3Service.getObjectUrl(usu.getFotoPath());
-		        usu.setFotoUrl(fotoUrl);
+            // Asegúrate de que sea un usuario
+            if (usu instanceof Usuario) {
+                // Solo permitir el acceso si es un usuario
+                return ResponseEntity.ok(usu);
+            } else {
+                // Si la persona autenticada no es un estudiante, denegar el acceso
+                System.out.println("Inicio de sesión denegado.");
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Inicio de sesión denegado.");
+            }
+        } else {
+            System.out.println("Falló el inicio de sesión para el mail: " + mail);
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Autenticación fallida");
+        }
+    }
 
-			// Asegúrate de que sea un usuario
-			if (usu instanceof Usuario) {
-				// Solo permitir el acceso si es un usuario
-				return ResponseEntity.ok(usu);
-			} else {
-				// Si la persona autenticada no es un estudiante, denegar el acceso
-				System.out.println("Inicio de sesión denegado.");
-				return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Inicio de sesión denegado.");
-			}
-		} else {
-			System.out.println("Falló el inicio de sesión para el mail: " + mail);
-			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Autenticación fallida");
-		}
-	}
+    @GetMapping("/usuario/busca_nombre")
+    public List<Usuario> buscarPorNombre(@RequestParam String nombres) {
+        return usuarioService.findByNombre(nombres);
+    }
 
-/////////// Buscadores x nombre apellido y mail///////////////////////
-	@GetMapping("/usuario/busca_nombre")
-	public List<Usuario> buscarPorNombre(@RequestParam String nombres) {
-		return usuarioservice.findByNombre(nombres);
-	}
+    @GetMapping("/usuario/busca_apellido")
+    public List<Usuario> buscarPorApellido(@RequestParam String apellidos) {
+        return usuarioService.findByApellido(apellidos);
+    }
 
-	@GetMapping("/usuario/busca_apellido")
-	public List<Usuario> buscarPorApellido(@RequestParam String apellidos) {
-		return usuarioservice.findByApellido(apellidos);
-	}
-
-	@GetMapping("/usuario/busca_mail")
-	public List<Usuario> buscarPorCorreo(@RequestParam String mail) {
-		return usuarioservice.findByMail(mail);
-	}
-
+    @GetMapping("/usuario/busca_mail")
+    public List<Usuario> buscarPorCorreo(@RequestParam String mail) {
+        return usuarioService.findByMail(mail);
+    }
 }

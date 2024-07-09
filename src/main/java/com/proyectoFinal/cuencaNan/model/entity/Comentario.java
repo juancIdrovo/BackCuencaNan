@@ -54,7 +54,6 @@ public class Comentario {
 	}
 
 	public Comentario(Long idComentario, Long idUsuario, Long idForo, String comentario) {
-		super();
 		this.idComentario = idComentario;
 		this.idUsuario = idUsuario;
 		this.idForo = idForo;

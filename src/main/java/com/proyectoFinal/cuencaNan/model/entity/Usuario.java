@@ -73,13 +73,6 @@ public class Usuario implements Serializable {
 		this.cedula = cedula;
 	}
 
-	public Long getId_usuario() {
-		return id_usuario;
-	}
-
-	public void setId_usuario(Long id_usuario) {
-		this.id_usuario = id_usuario;
-	}
 
 	public String getNombres() {
 		return nombres;
@@ -144,21 +137,6 @@ public class Usuario implements Serializable {
 	public void setCelular(String celular) {
 		this.celular = celular;
 	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-	public List<ForoUsuario> getForoUsuario() {
-		return foroUsuario;
-	}
-
-	public void setForoUsuario(List<ForoUsuario> foroUsuario) {
-		this.foroUsuario = foroUsuario;
-	}
-
-////constructores
-
 
 	public String getFotoUrl() {
 		return fotoUrl;

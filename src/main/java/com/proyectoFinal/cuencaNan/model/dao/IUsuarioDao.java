@@ -9,12 +9,11 @@ import com.proyectoFinal.cuencaNan.model.entity.Usuario;
 
 public interface IUsuarioDao extends CrudRepository<Usuario, Long> {
 
-	Optional<Usuario> findByCedula(String cedula);
+    Optional<Usuario> findByCedula(String cedula);
 
     Optional<Usuario> findByMail(String mail);
 
     List<Usuario> findByNombresContainingIgnoreCase(String nombres);
 
     List<Usuario> findByApellidosContainingIgnoreCase(String apellidos);
-
 }

@@ -6,15 +6,15 @@ import com.proyectoFinal.cuencaNan.model.entity.Usuario;
 
 public interface IUsuarioService {
 
-	public List<Usuario> findAll();
+    List<Usuario> findAll();
 
-    public Usuario save(Usuario usuario);
+    Usuario save(Usuario usuario);
 
-    public Usuario findById(Long id);
+    Usuario findById(Long id);
 
-    public void delete(Long id);
+    void delete(Long id);
 
-    public Usuario authenticate(String mail, String contrasena);
+    Usuario authenticate(String mail, String contrasena);
 
     List<Usuario> findByNombre(String nombres);
 
