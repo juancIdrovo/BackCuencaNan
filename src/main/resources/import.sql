@@ -1,14 +1,14 @@
-INSERT INTO usuarios (fecha_nacimiento, id_usuario, apellidos, cedula, celular, contrasena, direccion, foto_path, mail, nombre_usuario, nombres) VALUES ('1992-04-24 00:00:00', 1, 'Idrovo', '0104455647', '0984359326', '1234', 'Av Loja', 'https://practicasjohnsiguenza.s3.amazonaws.com/956f7930-8a14-4d27-b9bb-84e7edc356b7.jpg',  'juancidrovo@gmail.com', 'juanc .i.', 'Juan');
-INSERT INTO usuarios (fecha_nacimiento, id_usuario, apellidos, cedula, celular, contrasena, direccion, foto_path, mail, nombre_usuario, nombres) VALUES ('1985-05-20 00:00:00', 2, 'Perez', '0202020202', '0888888888', 'password456', 'Avenida Siempre Viva 742', 'foto2.jpg', 'email2@example.com', 'usuario2', 'Maria');
-INSERT INTO usuarios (fecha_nacimiento, id_usuario, apellidos, cedula, celular, contrasena, direccion, foto_path, mail, nombre_usuario, nombres) VALUES ('1992-09-15 00:00:00', 3, 'Lopez', '0303030303', '0777777777', 'password789', 'Calle 8', 'foto3.jpg','email3@example.com', 'usuario3', 'Carlos');
-INSERT INTO usuarios (fecha_nacimiento, id_usuario, apellidos, cedula, celular, contrasena, direccion, foto_path, mail, nombre_usuario, nombres) VALUES ('1980-12-01 00:00:00', 4, 'Martinez', '0404040404', '0666666666', 'password012', 'Carrera 7', 'foto4.jpg', 'email4@example.com', 'usuario4', 'Laura');
-INSERT INTO usuarios (fecha_nacimiento, id_usuario, apellidos, cedula, celular, contrasena, direccion, foto_path, mail, nombre_usuario, nombres) VALUES ('1995-07-30 00:00:00', 5, 'Rodriguez', '0505050505', '0555555555', 'password345', 'Plaza Mayor 1', 'foto5.jpg', 'Viajes, Tecnología', 'usuario5', 'Pedro');
+INSERT INTO usuarios (fecha_nacimiento, id_usuario, apellidos, cedula, celular, contrasena, direccion, foto_path, mail, nombre_usuario, nombres) VALUES ('1992-04-24 00:00:00', 1, 'Idrovo', '0104455647', '0984359326', '1234', 'Av Loja', '081dc47d-2dc2-4b9f-9a0c-4d8b54177e38.jpg',  'juancidrovo@gmail.com', 'juanc .i.', 'Juan');
+INSERT INTO usuarios (fecha_nacimiento, id_usuario, apellidos, cedula, celular, contrasena, direccion, foto_path, mail, nombre_usuario, nombres) VALUES ('1985-05-20 00:00:00', 2, 'Perez', '0202020202', '0888888888', 'password456', 'Avenida Siempre Viva 742', 'https://practicasjohnsiguenza.s3.us-east-2.amazonaws.com/000c5f04-ef87-4b14-a2cf-328625f7e741.jpg', 'email2@example.com', 'usuario2', 'Maria');
+INSERT INTO usuarios (fecha_nacimiento, id_usuario, apellidos, cedula, celular, contrasena, direccion, foto_path, mail, nombre_usuario, nombres) VALUES ('1992-09-15 00:00:00', 3, 'Lopez', '0303030303', '0777777777', 'password789', 'Calle 8', 'https://practicasjohnsiguenza.s3.us-east-2.amazonaws.com/0e6fe673-bfa1-4a87-9ad1-2840225b7ce3.jpg','email3@example.com', 'usuario3', 'Carlos');
+INSERT INTO usuarios (fecha_nacimiento, id_usuario, apellidos, cedula, celular, contrasena, direccion, foto_path, mail, nombre_usuario, nombres) VALUES ('1980-12-01 00:00:00', 4, 'Martinez', '0404040404', '0666666666', 'password012', 'Carrera 7', 'https://practicasjohnsiguenza.s3.us-east-2.amazonaws.com/081dc47d-2dc2-4b9f-9a0c-4d8b54177e38.jpg', 'email4@example.com', 'usuario4', 'Laura');
+INSERT INTO usuarios (fecha_nacimiento, id_usuario, apellidos, cedula, celular, contrasena, direccion, foto_path, mail, nombre_usuario, nombres) VALUES ('1995-07-30 00:00:00', 5, 'Rodriguez', '0505050505', '0555555555', 'password345', 'Plaza Mayor 1', 'https://practicasjohnsiguenza.s3.us-east-2.amazonaws.com/6314888d-98a2-4cf9-ac88-317fcb4d3c55.jpg', 'Viajes, Tecnología', 'usuario5', 'Pedro');
 
-INSERT INTO foro (id_foro, id_usuario, respuesta) VALUES (1, 1, 'Esta es una respuesta de ejemplo 1.');
-INSERT INTO foro (id_foro, id_usuario, respuesta) VALUES (2, 2, 'Esta es una respuesta de ejemplo 2.');
-INSERT INTO foro (id_foro, id_usuario, respuesta) VALUES (3, 3, 'Esta es una respuesta de ejemplo 3.');
-INSERT INTO foro (id_foro, id_usuario, respuesta) VALUES (4, 4, 'Esta es una respuesta de ejemplo 4.');
-INSERT INTO foro (id_foro, id_usuario, respuesta) VALUES (5, 5, 'Esta es una respuesta de ejemplo 5.');
+INSERT INTO foro (id_foro, id_usuario, respuesta, titulo, id_foto) VALUES (1, 1, 'Esta es una respuesta de ejemplo 1.', 'Ejemplo 1.', 1);
+INSERT INTO foro (id_foro, id_usuario, respuesta, titulo, id_foto) VALUES (2, 2, 'Esta es una respuesta de ejemplo 2.', 'Ejemplo 2.', 2);
+INSERT INTO foro (id_foro, id_usuario, respuesta, titulo, id_foto) VALUES (3, 3, 'Esta es una respuesta de ejemplo 3.', 'Ejemplo 3.', 3);
+INSERT INTO foro (id_foro, id_usuario, respuesta, titulo, id_foto) VALUES (4, 4, 'Esta es una respuesta de ejemplo 4.', 'Ejemplo 4.', 4);
+INSERT INTO foro (id_foro, id_usuario, respuesta, titulo, id_foto) VALUES (5, 5, 'Esta es una respuesta de ejemplo 5.', 'Ejemplo 5.', 5);
 
 
 INSERT INTO forousuarios (id_foro_usuario, id_foro, id_usuario) VALUES (1, 1, 1);
@@ -33,10 +33,10 @@ INSERT INTO tipospuntosinteres (idtipospuntosinteres, descripcion, nombre, categ
 
 
 INSERT INTO foto (fotoid, foto) VALUES (1, 'https://practicasjohnsiguenza.s3.us-east-2.amazonaws.com/parqueCalderon.jpg');
-INSERT INTO foto (fotoid, foto) VALUES (2, 'foto3.jpg');
-INSERT INTO foto (fotoid, foto) VALUES (3, 'foto3.jpg');
-INSERT INTO foto (fotoid, foto) VALUES (4, 'foto4.jpg');
-INSERT INTO foto (fotoid, foto) VALUES (5, 'foto5.jpg');
+INSERT INTO foto (fotoid, foto) VALUES (2, 'https://practicasjohnsiguenza.s3.us-east-2.amazonaws.com/341b08a9-1710-4c06-bc16-26a6c6493fe8.jpg');
+INSERT INTO foto (fotoid, foto) VALUES (3, 'https://practicasjohnsiguenza.s3.us-east-2.amazonaws.com/ccbc460f-7ab7-4309-ace7-ec57da79d987.jpg');
+INSERT INTO foto (fotoid, foto) VALUES (4, 'https://practicasjohnsiguenza.s3.us-east-2.amazonaws.com/a0a27fdd-bf83-4eda-8cbd-20e273383eca.jpg');
+INSERT INTO foto (fotoid, foto) VALUES (5, 'https://practicasjohnsiguenza.s3.us-east-2.amazonaws.com/e91b825e-41c3-4796-88f0-9780b392e6fb.jpg');
 INSERT INTO foto (fotoid, foto) VALUES (6, 'https://practicasjohnsiguenza.s3.us-east-2.amazonaws.com/paqDragon.jpg');
 
 
