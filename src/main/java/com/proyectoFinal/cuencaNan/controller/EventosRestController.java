@@ -53,6 +53,8 @@ public class EventosRestController {
 		eventoA.setFecha_Fin(eventos.getFecha_Fin());
 		eventoA.setFecha_Inicio(eventos.getFecha_Inicio());
 		eventoA.setNombre(eventos.getNombre());
+		eventoA.setHora_Inicio(eventos.getHora_Inicio());
+		eventoA.setHora_Fin(eventos.getHora_Fin());
 
 		return eventoService.save(eventoA);
 	}

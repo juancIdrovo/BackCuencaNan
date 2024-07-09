@@ -49,10 +49,17 @@ public class AdministradorRestController {
 	// editar_un_administrador
 	@PutMapping("/administradores/{idAdministrador}")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Administrador update(@RequestBody Administrador administrador, @PathVariable Long id) {
-		Administrador administradorActual = administradorservice.findById(id);
-		return administradorservice.save(administradorActual);
+	public Administrador update(@RequestBody Administrador administrador, @PathVariable Long idAdministrador) {
+	    Administrador administradorActual = administradorservice.findById(idAdministrador);
+	    administradorActual.setCedula(administrador.getCedula());
+	    administradorActual.setNombres(administrador.getNombres());
+	    administradorActual.setApellidos(administrador.getApellidos());
+	    administradorActual.setEmail(administrador.getEmail());
+	    administradorActual.setUrl_imagen(administrador.getUrl_imagen());
+	    administradorActual.setCelular(administrador.getCelular());
+	    return administradorservice.save(administradorActual);
 	}
+
 
 	// eliminar_un_administrador
 	@DeleteMapping("/administradores/{idAdministrador}")

@@ -15,11 +15,18 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+import java.util.List;
+
 @Entity
 @Table(name = "eventos")
 public class Eventos implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_evento;
@@ -27,6 +34,10 @@ public class Eventos implements Serializable {
 	private Long id_tipoEvento;
 	private Long id_Administrador;
 	private String nombre;
+
+	private LocalTime hora_Inicio;
+	private LocalTime hora_Fin;
+
 	@Temporal(TemporalType.DATE)
 	private Date fecha_Inicio;
 	@Temporal(TemporalType.DATE)
@@ -35,6 +46,8 @@ public class Eventos implements Serializable {
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idEventoFk")
 	private List<EventosPuntoInteres> listaEventosPuntosInt;
+
+	// Getters y Setters
 
 	public Long getId_evento() {
 		return id_evento;
@@ -58,6 +71,22 @@ public class Eventos implements Serializable {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public LocalTime getHora_Inicio() {
+		return hora_Inicio;
+	}
+
+	public void setHora_Inicio(LocalTime hora_Inicio) {
+		this.hora_Inicio = hora_Inicio;
+	}
+
+	public LocalTime getHora_Fin() {
+		return hora_Fin;
+	}
+
+	public void setHora_Fin(LocalTime hora_Fin) {
+		this.hora_Fin = hora_Fin;
 	}
 
 	public Date getFecha_Inicio() {
@@ -87,5 +116,5 @@ public class Eventos implements Serializable {
 	public void setId_Administrador(Long id_Administrador) {
 		this.id_Administrador = id_Administrador;
 	}
-
 }
+

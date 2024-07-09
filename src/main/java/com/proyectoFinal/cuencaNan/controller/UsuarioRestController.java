@@ -56,14 +56,20 @@ public class UsuarioRestController {
         return usuario;
     }
 
-    @PutMapping("/usuarios/{id_usuario}")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Usuario update(@RequestBody Usuario usuario, @PathVariable Long id_usuario) {
-        Usuario usuarioActual = usuarioService.findById(id_usuario);
-        usuarioActual.setApellidos(usuario.getApellidos());
-        // Puedes añadir más campos aquí para actualizar
-        return usuarioService.save(usuarioActual);
-    }
+	// editar_un_usuario
+	@PutMapping("/usuarios/{id_usuario}")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Usuario update(@RequestBody Usuario usuario, @PathVariable Long id_usuario) {
+		Usuario usuarioActual = usuarioservice.findById(id_usuario);
+		usuarioActual.setNombres(usuario.getNombres());
+		usuarioActual.setApellidos(usuario.getApellidos());
+		usuarioActual.setMail(usuario.getMail());
+		usuarioActual.setDireccion(usuario.getDireccion());
+		usuarioActual.setCelular(usuario.getCelular());
+		usuarioActual.setContrasena(usuario.getContrasena());
+		usuarioActual.setFecha_nacimiento(usuario.getFecha_nacimiento());
+		return usuarioservice.save(usuarioActual);
+	}
 
     @DeleteMapping("/usuarios/{id_usuario}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
