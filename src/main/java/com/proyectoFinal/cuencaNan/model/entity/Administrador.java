@@ -27,6 +27,7 @@ public class Administrador implements Serializable {
 	private String apellidos;
 	private String email;
 	private String nombre_usuario;
+	private String url_imagen;
 	private String contrasenia;
 	private String celular;
 
@@ -101,5 +102,14 @@ public class Administrador implements Serializable {
 	public void setCelular(String celular) {
 		this.celular = celular;
 	}
+
+	public String getUrl_imagen() {
+		return url_imagen;
+	}
+
+	public void setUrl_imagen(String url_imagen) {
+		this.url_imagen = url_imagen;
+	}
+	
 
 }
