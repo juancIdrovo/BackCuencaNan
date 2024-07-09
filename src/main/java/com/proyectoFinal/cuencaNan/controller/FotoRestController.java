@@ -1,6 +1,7 @@
 package com.proyectoFinal.cuencaNan.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,9 +13,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.proyectoFinal.cuencaNan.aws3.S3Service;
 import com.proyectoFinal.cuencaNan.model.entity.Foto;
 import com.proyectoFinal.cuencaNan.model.service.IFotoService;
 
@@ -25,22 +29,33 @@ public class FotoRestController {
 
 	@Autowired
 	private IFotoService fotoservice;
-
+	
+	@Autowired
+	private S3Service s3Service;
 	@GetMapping("/foto")
 	public List<Foto> indext() {
-		return fotoservice.findAll();
-
+		return fotoservice.findAll().stream().peek(foto -> {
+			foto.setFotoUrl(s3Service.getObjectUrl(foto.getFoto()));
+		}).collect(Collectors.toList());
 	}
 
     @GetMapping("/foto/{fotoid}")
     public Foto show(@PathVariable Long fotoid) {
+    	   Foto foto = fotoservice.findById(fotoid);
+    	   foto.setFotoUrl(s3Service.getObjectUrl(foto.getFoto()));
     	return fotoservice.findById(fotoid);
     }
 
     @PostMapping("/foto")
     @ResponseStatus(HttpStatus.CREATED)
-    public Foto create(@RequestBody Foto fotoid) {
-    	return fotoservice.save(fotoid);
+    public Foto create(@RequestParam MultipartFile file) {
+        String key = s3Service.putObject(file);
+        Foto foto = new Foto();
+        foto.setFoto(key);
+        fotoservice.save(foto);
+        foto.setFotoUrl(s3Service.getObjectUrl(key));
+
+        return fotoservice.save(foto);
     }
 
     @PutMapping("/foto/{fotoid}")
