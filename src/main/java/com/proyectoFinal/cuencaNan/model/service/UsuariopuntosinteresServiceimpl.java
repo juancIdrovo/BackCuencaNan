@@ -51,7 +51,8 @@ public class UsuariopuntosinteresServiceimpl implements IUsuariopuntosinteresSer
 
     @Override
     @Transactional(readOnly = true)
-    public Usuariopuntosinteres findByUserAndPuntoInteres(Long idusuario, Long idpuntosinteres) {
+    public List<Usuariopuntosinteres> findByUserAndPuntoInteres(Long idusuario, Long idpuntosinteres) {
         return usuariopuntos.findByUserAndPuntoInteres(idusuario, idpuntosinteres);
     }
+
 }

@@ -1,5 +1,7 @@
 package com.proyectoFinal.cuencaNan.model.dao;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -12,7 +14,8 @@ public interface IUsuariopuntosinteresDao extends CrudRepository<Usuariopuntosin
     Double findAverageCalificacionByPuntoInteres(@Param("idpuntosinteres") Long idpuntosinteres);
     
     @Query("SELECT u FROM Usuariopuntosinteres u WHERE u.idusuario = :idusuario AND u.idpuntosinteres = :idpuntosinteres")
-    Usuariopuntosinteres findByUserAndPuntoInteres(@Param("idusuario") Long idusuario, @Param("idpuntosinteres") Long idpuntosinteres);
+    List<Usuariopuntosinteres> findByUserAndPuntoInteres(@Param("idusuario") Long idusuario, @Param("idpuntosinteres") Long idpuntosinteres);
+
     
 }
 

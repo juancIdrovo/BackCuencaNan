@@ -64,8 +64,16 @@ public class UsuarioPuntoInteresRestController {
     }
     
     @GetMapping("/usuariopuntosinteres/{idusuario}/{idpuntosinteres}")
-    public Usuariopuntosinteres getByUserAndPuntoInteres(@PathVariable Long idusuario, @PathVariable Long idpuntosinteres) {
-        return usuarioservice.findByUserAndPuntoInteres(idusuario, idpuntosinteres);
+    public ResponseEntity<?> getByUserAndPuntoInteres(@PathVariable Long idusuario, @PathVariable Long idpuntosinteres) {
+        List<Usuariopuntosinteres> result = usuarioservice.findByUserAndPuntoInteres(idusuario, idpuntosinteres);
+        if (result.size() == 1) {
+            return new ResponseEntity<>(result.get(0), HttpStatus.OK);
+        } else if (result.isEmpty()) {
+            return new ResponseEntity<>("No rating found", HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>("Multiple ratings found", HttpStatus.CONFLICT);
+        }
     }
+
 
 }

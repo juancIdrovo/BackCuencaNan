@@ -16,5 +16,5 @@ public interface IUsuariopuntosinteresService {
 
     Double findAverageCalificacionByPuntoInteres(Long idpuntosinteres);
 
-    Usuariopuntosinteres findByUserAndPuntoInteres(Long idusuario, Long idpuntosinteres); // Nuevo método
+    List<Usuariopuntosinteres> findByUserAndPuntoInteres(Long idusuario, Long idpuntosinteres); // Nuevo método
 }
