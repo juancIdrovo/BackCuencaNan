@@ -153,6 +153,7 @@ public class Usuario implements Serializable {
 	public void setFotoPath(String fotoPath) {
 		this.fotoPath = fotoPath;
 	}
+	
 
 	public Usuario() {
 		super();

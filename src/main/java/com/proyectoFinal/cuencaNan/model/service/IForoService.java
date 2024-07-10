@@ -13,5 +13,7 @@ public interface IForoService {
 	public Foro findById(Long idForo);
 
 	public void delete(Long idForo);
+	
+    List<Foro> findByIdUsuario(Long idUsuario);
 
 }

@@ -54,7 +54,10 @@ public class ForoRestController {
 
 	}
 
-
+	 @GetMapping("/foros/usuario/{idUsuario}")
+	    public List<Foro> getForosByUsuario(@PathVariable Long idUsuario) {
+	        return foroService.findByIdUsuario(idUsuario);
+	    }
 
 
 }

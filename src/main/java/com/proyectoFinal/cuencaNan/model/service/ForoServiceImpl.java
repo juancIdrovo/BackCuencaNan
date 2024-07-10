@@ -42,5 +42,9 @@ public class ForoServiceImpl implements IForoService{
 		// TODO Auto-generated method stub
 		foroDao.deleteById(idForo);
 	}
-
+	  @Override
+		@Transactional
+	    public List<Foro> findByIdUsuario(Long idUsuario) {
+	        return foroDao.findByIdUsuario(idUsuario);
+	    }
 }
