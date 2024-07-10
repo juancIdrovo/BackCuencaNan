@@ -57,6 +57,8 @@ public class AdministradorRestController {
 	    administradorActual.setEmail(administrador.getEmail());
 	    administradorActual.setUrl_imagen(administrador.getUrl_imagen());
 	    administradorActual.setCelular(administrador.getCelular());
+	    administradorActual.setNombre_usuario(administrador.getNombre_usuario());
+	    administradorActual.setContrasenia(administrador.getContrasenia());
 	    return administradorservice.save(administradorActual);
 	}
 
