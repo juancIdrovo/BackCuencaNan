@@ -95,6 +95,7 @@ public class UsuarioRestController {
             // Asegúrate de que sea un usuario
             if (usu instanceof Usuario) {
                 // Solo permitir el acceso si es un usuario
+                System.out.println("ID de usuario: " + usu.getIdUsuario()); // Agrega esta línea
                 return ResponseEntity.ok(usu);
             } else {
                 // Si la persona autenticada no es un estudiante, denegar el acceso
