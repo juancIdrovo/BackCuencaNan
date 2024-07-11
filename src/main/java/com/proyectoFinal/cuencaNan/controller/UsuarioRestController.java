@@ -51,8 +51,10 @@ public class UsuarioRestController {
     @PostMapping("/usuarios")
     @ResponseStatus(HttpStatus.CREATED)
     public Usuario create(@RequestBody Usuario usuario) {
-        usuarioService.save(usuario);
-        usuario.setFotoUrl(s3Service.getObjectUrl(usuario.getFotoPath()));
+        usuario = usuarioService.save(usuario);
+        if (usuario.getFotoPath() != null) {
+            usuario.setFotoUrl(s3Service.getObjectUrl(usuario.getFotoPath()));
+        }
         return usuario;
     }
 
