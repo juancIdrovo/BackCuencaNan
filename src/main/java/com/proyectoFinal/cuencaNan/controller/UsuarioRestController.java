@@ -70,6 +70,8 @@ public class UsuarioRestController {
 		usuarioActual.setCelular(usuario.getCelular());
 		usuarioActual.setContrasena(usuario.getContrasena());
 		usuarioActual.setFecha_nacimiento(usuario.getFecha_nacimiento());
+		usuarioActual.setFotoPath(usuario.getFotoPath());
+		usuarioActual.setFotoUrl(s3Service.getObjectUrl(usuario.getFotoPath()));
 		return usuarioService.save(usuarioActual);
 	}
 
