@@ -66,8 +66,8 @@ public class AdministradorRestController {
 	// eliminar_un_administrador
 	@DeleteMapping("/administradores/{idAdministrador}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable Long id) {
-		administradorservice.delete(id);
+	public void delete(@PathVariable Long idAdministrador) {
+		administradorservice.delete(idAdministrador);
 	}
 
 }
