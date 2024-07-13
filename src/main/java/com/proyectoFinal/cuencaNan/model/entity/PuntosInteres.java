@@ -16,9 +16,6 @@ import jakarta.persistence.Table;
 @Table(name = "puntointeres")
 public class PuntosInteres implements Serializable {
 
-	/**
-	 *
-	 */
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -130,7 +127,5 @@ public class PuntosInteres implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-
 
 }

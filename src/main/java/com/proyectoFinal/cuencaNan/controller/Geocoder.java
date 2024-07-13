@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.proyectoFinal.cuencaNan.model.Response;
+import com.proyectoFinal.cuencaNan.GoogleMap.Response;
 
 @RestController
 public class Geocoder {

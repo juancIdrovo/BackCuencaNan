@@ -1,4 +1,4 @@
-package com.proyectoFinal.cuencaNan.model;
+package com.proyectoFinal.cuencaNan.GoogleMap;
 
 public class Location {
 
