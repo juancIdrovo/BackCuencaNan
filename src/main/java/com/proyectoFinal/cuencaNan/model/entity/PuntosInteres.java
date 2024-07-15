@@ -25,7 +25,7 @@ public class PuntosInteres implements Serializable {
 	private Long id;
 	private Long idAdministrador;
 	private Long idTipoPuntoInteres;
-	private Long idFoto;
+	private String idFoto;
 	private String nombre;
 	private String descripcion;
 	private double latitud;
@@ -63,11 +63,11 @@ public class PuntosInteres implements Serializable {
 		this.idTipoPuntoInteres = idTipoPuntoInteres;
 	}
 
-	public Long getIdFoto() {
+	public String getIdFoto() {
 		return idFoto;
 	}
 
-	public void setIdFoto(Long idFoto) {
+	public void setIdFoto(String idFoto) {
 		this.idFoto = idFoto;
 	}
 
