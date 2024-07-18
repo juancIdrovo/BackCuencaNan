@@ -13,10 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.proyectoFinal.cuencaNan.aws3.S3Service;
 import com.proyectoFinal.cuencaNan.model.entity.Foto;
@@ -48,13 +46,7 @@ public class FotoRestController {
 
     @PostMapping("/foto")
     @ResponseStatus(HttpStatus.CREATED)
-    public Foto create(@RequestParam MultipartFile file) {
-        String key = s3Service.putObject(file);
-        Foto foto = new Foto();
-        foto.setFoto(key);
-        fotoservice.save(foto);
-        foto.setFotoUrl(s3Service.getObjectUrl(key));
-
+    public Foto create(@RequestBody Foto foto) {
         return fotoservice.save(foto);
     }
 
@@ -63,6 +55,7 @@ public class FotoRestController {
     public Foto update(@RequestBody Foto foto, @PathVariable Long fotoid) {
     	Foto fotoactual = fotoservice.findById(fotoid);
     	fotoactual.setFoto(foto.getFoto());
+    	fotoactual.setFotoUrl(foto.getFotoUrl());
     	return fotoservice.save(fotoactual);
     }
 
