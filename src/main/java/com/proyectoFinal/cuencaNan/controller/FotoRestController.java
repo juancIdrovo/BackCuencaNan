@@ -20,7 +20,7 @@ import com.proyectoFinal.cuencaNan.aws3.S3Service;
 import com.proyectoFinal.cuencaNan.model.entity.Foto;
 import com.proyectoFinal.cuencaNan.model.service.IFotoService;
 
-@CrossOrigin(origins= {"http://localhost:4200"})
+//@CrossOrigin(origins= {"http://138.197.126.67:9098"})
 @RestController
 @RequestMapping("/api")
 public class FotoRestController {

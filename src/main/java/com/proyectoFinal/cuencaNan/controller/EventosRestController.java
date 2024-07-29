@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.proyectoFinal.cuencaNan.model.entity.Eventos;
 import com.proyectoFinal.cuencaNan.model.service.IEventosService;
 
-@CrossOrigin(origins = { "http://localhost:4200" })
+//@CrossOrigin(origins = { "http://138.197.126.67:9098" })
 @RestController
 @RequestMapping("/api")
 public class EventosRestController {

@@ -22,10 +22,10 @@ public interface ITipospuntosinteresDao extends CrudRepository<Tipospuntosintere
 
     // Método personalizado para buscar por múltiples criterios
     @Query("SELECT t FROM Tipospuntosinteres t WHERE " +
-           "(:nombre IS NULL OR t.nombre LIKE %:nombre%) AND " +
+           
            "(:descripcion IS NULL OR t.descripcion LIKE %:descripcion%) AND " +
            "(:categoria IS NULL OR t.categoria LIKE %:categoria%)")
-    List<Tipospuntosinteres> buscarPorCriterios(@Param("nombre") String nombre,
+    List<Tipospuntosinteres> buscarPorCriterios(
                                                @Param("descripcion") String descripcion,
                                                @Param("categoria") String categoria);
 

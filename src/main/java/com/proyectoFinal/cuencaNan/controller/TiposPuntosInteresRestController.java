@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.proyectoFinal.cuencaNan.model.entity.Tipospuntosinteres;
 import com.proyectoFinal.cuencaNan.model.service.ITipospuntosinteresService;
 
-@CrossOrigin(origins= {"http://localhost:4200"})
+//@CrossOrigin(origins= {"http://localhost:4200"})
 @RestController
 @RequestMapping("/api")
 public class TiposPuntosInteresRestController {
@@ -63,10 +63,15 @@ public class TiposPuntosInteresRestController {
 
 
     @GetMapping("/tipospuntosinteres/buscar")
-    public List<Tipospuntosinteres> buscar(@RequestParam(required = false) String nombre,
+    public List<Tipospuntosinteres> buscar(
                                            @RequestParam(required = false) String descripcion,
                                            @RequestParam(required = false) String categoria) {
-        return Tipospuntosinteresservice.buscarPorCriterios(nombre, descripcion, categoria);
+        return Tipospuntosinteresservice.buscarPorCriterios( descripcion, categoria);
     }
-
+    
+    
+    @GetMapping("/tipospuntosinteres/categoria/{categoria}")
+    public List<Tipospuntosinteres> findByCategoria(@PathVariable String categoria) {
+        return Tipospuntosinteresservice.findByCategoria(categoria);
+    }
 }

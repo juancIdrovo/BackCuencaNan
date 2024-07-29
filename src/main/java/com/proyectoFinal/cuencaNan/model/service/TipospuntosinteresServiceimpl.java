@@ -44,11 +44,7 @@ public class TipospuntosinteresServiceimpl implements ITipospuntosinteresService
 	}
 
 
-    @Override
-    @Transactional(readOnly = true)
-    public List<Tipospuntosinteres> findByNombre(String nombre) {
-        return Tipospuntosinteres.findByNombreContaining(nombre);
-    }
+   
 
     @Override
     @Transactional(readOnly = true)
@@ -64,8 +60,8 @@ public class TipospuntosinteresServiceimpl implements ITipospuntosinteresService
 
     @Override
     @Transactional(readOnly = true)
-    public List<Tipospuntosinteres> buscarPorCriterios(String nombre, String descripcion, String categoria) {
-        return Tipospuntosinteres.buscarPorCriterios(nombre, descripcion, categoria);
+    public List<Tipospuntosinteres> buscarPorCriterios(String descripcion, String categoria) {
+        return Tipospuntosinteres.buscarPorCriterios( descripcion, categoria);
     }
 
 }

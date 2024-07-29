@@ -14,12 +14,12 @@ public interface ITipospuntosinteresService {
 
 	public void delete (Long fotoid);
 
-	List<Tipospuntosinteres> findByNombre(String nombre);
+	
 
     List<Tipospuntosinteres> findByDescripcion(String descripcion);
 
     List<Tipospuntosinteres> findByCategoria(String categoria);
 
-    List<Tipospuntosinteres> buscarPorCriterios(String nombre, String descripcion, String categoria);
+    List<Tipospuntosinteres> buscarPorCriterios( String descripcion, String categoria);
 
 }

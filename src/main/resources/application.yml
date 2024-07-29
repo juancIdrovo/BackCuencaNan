@@ -41,6 +41,13 @@ logging:
         util:
           EC2MetadataUtils: error
 
+mvc:
+ cors:
+  allowed-origins: http://167.172.242.113:9098
+  allowed-methods: GET, POST, PUT, DELETE
+  allowed-headers: "*"
+  allow-credentials: true
+ 
 server:
   port: 8080
 
