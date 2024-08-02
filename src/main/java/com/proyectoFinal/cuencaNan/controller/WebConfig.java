@@ -19,9 +19,9 @@ public class WebConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .cors().configurationSource(corsConfigurationSource()) // Configura CORS
-            .and()
-            .csrf().disable(); // Desactiva CSRF si no es necesario para tu caso
+                .cors().configurationSource(corsConfigurationSource()) // Configura CORS
+                .and()
+                .csrf().disable(); // Desactiva CSRF si no es necesario para tu caso
         // otras configuraciones de seguridad
         return http.build();
     }
@@ -29,7 +29,7 @@ public class WebConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.setAllowedOrigins(Arrays.asList("http://167.71.104.123:4200")); // Añade ambos orígenes permitidos
+        corsConfiguration.setAllowedOrigins(Collections.singletonList("*"));
         corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
         corsConfiguration.setAllowedHeaders(Collections.singletonList("*"));
         corsConfiguration.setAllowCredentials(true);
