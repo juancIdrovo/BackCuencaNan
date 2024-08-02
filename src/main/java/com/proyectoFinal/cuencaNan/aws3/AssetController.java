@@ -18,7 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api/assets")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://167.71.104.123:4200")
 public class AssetController {
 
 

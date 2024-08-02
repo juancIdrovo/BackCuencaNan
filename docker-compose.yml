@@ -1,10 +1,10 @@
 version: "3"
 services:
   api-spring:
-    image: juancio/cuencananprod:1.2.3
+    image: juancio/cuencananback
     networks:
       - net-cloud
-    container_name: cuencanan
+    container_name: cuencananback
     depends_on:
       - mysql_cuencanan
     environment:
@@ -37,12 +37,12 @@ services:
     restart: always
 
   cuencananwebprod:
-    image: juancio/cuencananwebprod:1.3.2
+    image: juancio/cuencananweb
     networks:
       - net-cloud
-    container_name: cuencananwebprod
+    container_name: cuencananweb
     ports:
-      - 9098:80
+      - 4200:80
     depends_on:
       - api-spring 
     restart: always
